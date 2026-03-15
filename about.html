@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — [Your Name]</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=Space+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:       #111009;
+      --surface:  #1A1814;
+      --surface2: #221F19;
+      --text:     #F0EAE0;
+      --muted:    #9A9080;
+      --faint:    #5C5548;
+      --amber:    #D4923A;
+      --amber-d:  #8A5A1A;
+      --amber-g:  #F0B060;
+      --green:    #4A7C5F;
+      --green-d:  #2A4A38;
+      --border:   #2E2A24;
+      --border2:  #3A362E;
+      --serif:    'Fraunces', Georgia, serif;
+      --body:     'Source Serif 4', Georgia, serif;
+      --mono:     'Space Mono', monospace;
+      --max:      660px;
+      --pad:      clamp(1.25rem, 5vw, 2.5rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    ::selection { background: var(--amber-d); color: var(--text); }
+
+    a {
+      color: var(--amber);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber-d);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    a:hover { color: var(--amber-g); border-color: var(--amber); }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(17,16,9,0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem var(--pad);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-home {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      color: var(--faint);
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .nav-home:hover { color: var(--muted); border: none; }
+    .nav-home::before { content: '←'; font-size: 0.7rem; }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--text);
+      border: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-name:hover { color: var(--amber); border: none; }
+
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--faint);
+      border: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-links a.current { color: var(--amber); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    /* ── SECTION LABEL ── */
+    .label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── BODY TEXT ── */
+    .prose { max-width: 580px; }
+    .prose p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text);
+    }
+    .prose p + p { margin-top: 1.25rem; }
+
+    .pull-quote {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--amber);
+      border-left: 2px solid var(--amber-d);
+      padding: 0.25rem 0 0.25rem 1.25rem;
+      margin: 2rem 0;
+      line-height: 1.5;
+    }
+
+    /* ── RESEARCH ITEMS ── */
+    .research-list { margin-bottom: 2rem; }
+
+    .r-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 1rem;
+    }
+    .r-item:first-child { border-top: 1px solid var(--border); }
+
+    .r-num {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--amber-d);
+      padding-top: 0.2rem;
+    }
+    .r-item h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+      line-height: 1.4;
+    }
+    .r-item p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── TAGS ── */
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 2rem; }
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.04em;
+      color: var(--green);
+      background: var(--green-d);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    /* ── BLOG ITEMS ── */
+    .blog-list { list-style: none; }
+    .b-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .b-item:first-child { border-top: 1px solid var(--border); }
+    .b-cat {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.45rem;
+    }
+    .b-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 0.98rem;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 0.45rem;
+    }
+    .b-title a { color: var(--text); border-color: transparent; }
+    .b-title a:hover { color: var(--amber-g); border-color: var(--amber-d); }
+    .b-excerpt { font-size: 0.83rem; color: var(--muted); line-height: 1.6; max-width: 440px; }
+    .b-date { font-family: var(--mono); font-size: 0.62rem; color: var(--faint); white-space: nowrap; }
+
+    /* ── SHELF ── */
+    .shelf-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+    .s-tab {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--faint);
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+      user-select: none;
+    }
+    .s-tab:hover { color: var(--muted); }
+    .s-tab.active { color: var(--amber); border-bottom-color: var(--amber); }
+    .s-panel { display: none; }
+    .s-panel.active { display: block; }
+
+    .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1.25rem; }
+
+    .m-card { display: flex; flex-direction: column; gap: 0.55rem; }
+    .m-cover {
+      aspect-ratio: 2/3;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .m-cover.album, .m-cover.pod { aspect-ratio: 1/1; }
+
+    .bk1 { background: linear-gradient(155deg,#1A2030,#0E1520); border-left: 3px solid #3A5A8A; }
+    .bk2 { background: linear-gradient(155deg,#2A1810,#1A0E08); border-left: 3px solid #8A4A1A; }
+    .bk3 { background: linear-gradient(155deg,#102018,#081410); border-left: 3px solid #2A6A4A; }
+    .bk4 { background: linear-gradient(155deg,#1E1020,#120A14); border-left: 3px solid #6A3A8A; }
+    .bk5 { background: linear-gradient(155deg,#201A10,#14100A); border-left: 3px solid #8A7A2A; }
+    .bk6 { background: linear-gradient(155deg,#201010,#140808); border-left: 3px solid #8A2A2A; }
+    .al1 { background: linear-gradient(135deg,#1A1020,#2A1030); }
+    .al2 { background: linear-gradient(135deg,#101A10,#102010); }
+    .pd1 { background: linear-gradient(135deg,#101820,#0A1018); }
+    .pd2 { background: linear-gradient(135deg,#181020,#100A18); }
+
+    .spine {
+      font-family: var(--mono);
+      font-size: 0.48rem;
+      color: rgba(255,255,255,0.15);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      position: absolute;
+      left: 1rem; top: 0.75rem; bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    .cover-icon {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      opacity: 0.08;
+    }
+
+    .m-title { font-family: var(--serif); font-size: 0.78rem; font-weight: 400; color: var(--text); line-height: 1.3; }
+    .m-author { font-family: var(--mono); font-size: 0.58rem; color: var(--faint); margin-top: -0.2rem; }
+    .m-status { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--amber); margin-top: -0.15rem; }
+
+    /* ── NOW ── */
+    .now-grid { display: grid; gap: 0.65rem; }
+    .now-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    .now-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--amber-d); margin-top: 0.55rem; flex-shrink: 0; }
+    .now-text { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+    .now-text em { color: var(--text); font-style: italic; }
+
+    /* ── CONTACT ── */
+    .contact-intro { font-size: 0.95rem; color: var(--muted); font-weight: 300; margin-bottom: 2rem; max-width: 460px; line-height: 1.75; }
+
+    .c-links { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+    .c-btn {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      border: 1px solid var(--border2);
+      padding: 0.5rem 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .c-btn:hover { color: var(--amber); border-color: var(--amber-d); }
+
+    /* ── SECTION SPACING ── */
+    .section { padding: 2.5rem 0; }
+    .section + .section { border-top: 1px solid var(--border); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.75rem var(--pad);
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    footer p { font-family: var(--mono); font-size: 0.6rem; color: var(--faint); letter-spacing: 0.04em; }
+
+    @media (max-width: 560px) {
+      .b-item { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-home">Home</a>
+      <a href="index.html" class="nav-name">[Your Name]</a>
+      <ul class="nav-links">
+        <li><a href="about.html" class="current">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="shelf.html">Shelf</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <!-- ── PAGE HEADER ── -->
+      <div class="page-header">
+        <p class="page-eyebrow">About</p>
+        <h1>Who I am<br>and what I am doing</h1>
+      </div>
+
+      <!-- ── ABOUT TEXT ── -->
+      <div class="section">
+        <div class="prose">
+          <p>
+            I am a Nairobi-based researcher and Computer Science graduate working
+            at the intersection of natural language processing, educational assessment,
+            and AI governance in African contexts. My work begins with a specific
+            observation: the AI tools entering Kenyan classrooms were not built for
+            Kenyan students.
+          </p>
+
+          <blockquote class="pull-quote">
+            "The question is not whether AI will be in African schools.
+            It is whether it will serve African students —
+            or merely be applied to them."
+          </blockquote>
+
+          <p>
+            I am building the evidence and infrastructure this question demands:
+            annotated datasets of Kenyan multilingual student writing, audit
+            methodologies for AI educational tools, and NLP resources for Swahili,
+            Kenyan English, and Sheng. This work lives at an intersection that has
+            not yet been claimed. I think of that as an invitation, not a warning.
+          </p>
+
+          <p>
+            <!-- FILL IN: your actual background, education, what you did before,
+                 what drives you. Keep it honest, specific, and in your voice. -->
+            My background is in [your field/CS], and I came to this research through
+            [a sentence about what brought you here — a specific experience, observation,
+            or provocation]. I am interested in the places where technical systems meet
+            human communities, and what happens to the community when the system was
+            not designed with them in mind.
+          </p>
+        </div>
+      </div>
+
+      <!-- ── NOW ── -->
+      <div class="section">
+        <p class="label">Now</p>
+        <div class="now-grid">
+          <div class="now-item">
+            <div class="now-dot"></div>
+            <p class="now-text">Building an annotation schema for Kenyan English student writing — working with Kenyan language teachers to define what counts as a feature versus an error</p>
+          </div>
+          <div class="now-item">
+            <div class="now-dot"></div>
+            <p class="now-text">Reading: <em>Stochastic Parrots</em> (Bender, Gebru et al.) and <em>Algorithmic Colonisation of Africa</em> (Birhane, 2020)</p>
+          </div>
+          <div class="now-item">
+            <div class="now-dot"></div>
+            <p class="now-text">Preparing a project abstract for <em>IndabaX Kenya</em></p>
+          </div>
+          <div class="now-item">
+            <div class="now-dot"></div>
+            <p class="now-text">Working through <em>fast.ai Practical Deep Learning for Coders</em></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>[Your Name] · Nairobi · 2026</p>
+    <p>← <a href="index.html" style="color:var(--faint);border-color:transparent;">home</a></p>
+  </footer>
+
+  <script>
+    // Tab switcher — reused on shelf.html
+    function switchTab(el, panel) {
+      document.querySelectorAll('.s-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.s-panel').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById(panel).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
