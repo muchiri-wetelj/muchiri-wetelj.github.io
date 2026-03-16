@@ -3,271 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[Martin Muchiri]</title>
-  <meta name="description" content="Researcher at the intersection of AI accountability, NLP, and education in Kenya and Africa." />
+  <title>Martin M</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111009'/><circle cx='16' cy='16' r='6' fill='none' stroke='%23D4923A' stroke-width='1.5'/><line x1='16' y1='4' x2='16' y2='10' stroke='%23D4923A' stroke-width='1.5'/><line x1='16' y1='22' x2='16' y2='28' stroke='%23D4923A' stroke-width='1.5'/><line x1='4' y1='16' x2='10' y2='16' stroke='%23D4923A' stroke-width='1.5'/><line x1='22' y1='16' x2='28' y2='16' stroke='%23D4923A' stroke-width='1.5'/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Space+Mono&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,200;1,9..144,300;1,9..144,400&family=Space+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
   <style>
-:root{--cream:#F2EDE4;--c7:rgba(242,237,228,.7);--c4:rgba(242,237,228,.4);--c2:rgba(242,237,228,.2);--amber:#D4923A;--ab:#F0B860;--qf:'Cormorant Garamond',Georgia,serif;--df:'Fraunces',Georgia,serif;--mf:'Space Mono',monospace}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;scroll-behavior:smooth}
-body{background:#060504;color:var(--cream);font-family:var(--df);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:var(--amber);text-decoration:none;transition:color .2s}
-a:hover{color:var(--ab)}
-.site-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem clamp(1.5rem,5vw,3rem);display:flex;justify-content:space-between;align-items:center;transition:background .4s}
-.site-nav.dark{background:rgba(6,5,4,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(242,237,228,.06)}
-.nav-brand{font-family:var(--df);font-weight:300;font-style:italic;font-size:.98rem;color:var(--cream);border:none}
-.nav-brand:hover{color:var(--amber)}
-.nav-links{display:flex;gap:1.75rem;list-style:none}
-.nav-links a{font-family:var(--mf);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c4);border:none}
-.nav-links a:hover{color:var(--cream)}
-.hero{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden}
-.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
-.slide.active{opacity:1}
-.slide-1{background:linear-gradient(to bottom,rgba(0,0,0,.12) 0%,rgba(0,0,0,.62) 100%),linear-gradient(to bottom,#0C0600 0%,#281000 12%,#5A2400 28%,#984C06 45%,#C2760A 58%,#884010 72%,#280E00 100%)}
-.slide-2{background:linear-gradient(to bottom,rgba(0,0,0,.18) 0%,rgba(0,0,0,.55) 100%),linear-gradient(to bottom,#000700 0%,#020B02 14%,#061606 30%,#0B2E08 50%,#145A12 65%,#0C3A0A 80%,#040804 100%)}
-.slide-3{background:linear-gradient(to bottom,rgba(0,0,0,.08) 0%,rgba(0,0,0,.62) 100%),linear-gradient(to bottom,#020306 0%,#030716 20%,#040E28 40%,#06163E 60%,#0A225E 80%,#071848 100%)}
-.slide-4{background:linear-gradient(to bottom,rgba(0,0,0,.18) 0%,rgba(0,0,0,.45) 100%),linear-gradient(to bottom,#03000E 0%,#0A0326 20%,#1C0534 40%,#480D26 55%,#880E08 66%,#C23606 80%,#E06C1C 100%)}
-.slide-5{background:linear-gradient(to bottom,rgba(0,0,0,.22) 0%,rgba(0,0,0,.52) 100%),linear-gradient(to bottom,#070202 0%,#160504 14%,#340804 30%,#660C06 50%,#9A1E0E 65%,#BE3A12 80%,#D65E1E 100%)}
-.slide-6{background:radial-gradient(ellipse at 28% 18%,rgba(50,30,100,.32) 0%,transparent 52%),radial-gradient(ellipse at 72% 8%,rgba(30,15,70,.22) 0%,transparent 42%),linear-gradient(to bottom,#030110 0%,#050316 30%,#040508 70%,#020203 100%)}
-.slide-art{position:absolute;bottom:0;left:0;right:0;width:100%;height:45%;pointer-events:none}
-.slide-art svg{width:100%;height:100%;display:block}
-#stars-c{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1.4s ease}
-.quote-card{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(1.75rem,7vw,5.5rem) clamp(4.5rem,13vh,8rem);opacity:0;transform:translateY(10px);transition:opacity 1s ease .5s,transform 1s ease .5s;pointer-events:none}
-.quote-card.active{opacity:1;transform:translateY(0)}
-.q-label{font-family:var(--mf);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:1.1rem;display:flex;align-items:center;gap:.7rem}
-.q-label::before{content:'';display:block;width:1.4rem;height:1px;background:var(--amber);opacity:.55}
-blockquote{font-family:var(--qf);font-size:clamp(1.35rem,3.2vw,2.1rem);font-weight:300;font-style:italic;line-height:1.5;color:var(--cream);max-width:700px;margin-bottom:.9rem;text-shadow:0 2px 18px rgba(0,0,0,.85)}
-cite{font-family:var(--mf);font-size:.63rem;letter-spacing:.06em;color:var(--c7);font-style:normal}
-.slide-dots{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);display:flex;gap:.55rem;align-items:center;z-index:20}
-.dot{width:5px;height:5px;border-radius:50%;background:var(--c2);border:none;cursor:pointer;padding:0;transition:background .3s,transform .3s}
-.dot.active{background:var(--amber);transform:scale(1.5)}
-.scroll-hint{position:absolute;bottom:1.6rem;right:clamp(1.5rem,4vw,3rem);font-family:var(--mf);font-size:.56rem;letter-spacing:.1em;color:rgba(242,237,228,.25);writing-mode:vertical-rl;display:flex;align-items:center;gap:.45rem}
-.scroll-hint::after{content:'';display:block;width:1px;height:1.8rem;background:rgba(242,237,228,.15)}
-.identity{background:#090807;padding:clamp(4rem,10vh,7rem) clamp(1.5rem,5vw,3rem);border-top:1px solid rgba(242,237,228,.05)}
-.id-wrap{max-width:680px;margin:0 auto}
-.id-name{font-family:var(--df);font-size:clamp(2.4rem,7vw,4rem);font-weight:300;font-style:italic;line-height:1.1;color:var(--cream);margin-bottom:1.1rem}
-.id-line{font-size:1rem;font-weight:300;color:var(--c4);line-height:1.7;max-width:500px;margin-bottom:3rem}
-.id-line em{color:var(--amber);font-style:normal}
-.page-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:.65rem}
-.page-card{display:flex;flex-direction:column;gap:.35rem;padding:1.1rem 1rem;background:rgba(242,237,228,.025);border:1px solid rgba(242,237,228,.065);transition:background .2s,border-color .2s}
-.page-card:hover{background:rgba(212,146,58,.055);border-color:rgba(212,146,58,.18)}
-.pc-num{font-family:var(--mf);font-size:.53rem;color:rgba(212,146,58,.45);letter-spacing:.08em}
-.pc-name{font-family:var(--df);font-size:.92rem;font-weight:300;color:var(--cream)}
-.pc-desc{font-family:var(--mf);font-size:.57rem;color:rgba(242,237,228,.28);letter-spacing:.03em;line-height:1.5}
-.site-footer{background:#050403;padding:1.6rem clamp(1.5rem,5vw,3rem);border-top:1px solid rgba(242,237,228,.04);max-width:680px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem}
-.site-footer p{font-family:var(--mf);font-size:.58rem;letter-spacing:.05em;color:rgba(242,237,228,.18)}
-@media(max-width:520px){.nav-links{gap:1.1rem}.nav-links li:nth-child(n+4){display:none}.page-grid{grid-template-columns:1fr 1fr}blockquote{font-size:clamp(1.15rem,5vw,1.5rem)}}
+    :root{--bg:#0A0906;--text:#EDE7DB;--muted:rgba(237,231,219,.52);--faint:rgba(237,231,219,.28);--amber:#E0A040;--amber-d:rgba(224,160,64,.35);--serif:'Fraunces',Georgia,serif;--mono:'Space Mono',monospace;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html,body{width:100%;height:100%;overflow:hidden;}
+    body{background:var(--bg);color:var(--text);font-family:var(--mono);-webkit-font-smoothing:antialiased;}
+    ::selection{background:rgba(224,160,64,.3);color:var(--text);}
+    .slides{position:fixed;inset:0;z-index:0;}
+    .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 2s ease;}
+    .slide.active{opacity:1;}
+    .slide.video-slide{background:#000;}
+    .slide::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,7,5,.68) 0%,rgba(8,7,5,0) 28%,rgba(8,7,5,0) 52%,rgba(8,7,5,.5) 72%,rgba(8,7,5,.9) 100%);}
+    .video-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+    .video-wrap iframe{position:absolute;width:177.78%;height:177.78%;top:-38.89%;left:-38.89%;border:none;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:1.75rem 2.5rem;display:flex;justify-content:space-between;align-items:center;}
+    .nav-name{font-family:var(--serif);font-weight:300;font-size:.88rem;color:var(--text);text-decoration:none;opacity:.85;transition:opacity .2s;}
+    .nav-name:hover{opacity:1;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-links a:hover{color:var(--text);}
+    .bottom{position:fixed;bottom:0;left:0;right:0;z-index:20;padding:0 2.5rem 2.25rem;}
+    .quote-wrap{max-width:680px;margin-bottom:1.5rem;opacity:0;transform:translateY(8px);transition:opacity .9s ease .4s,transform .9s ease .4s;}
+    .quote-wrap.visible{opacity:1;transform:translateY(0);}
+    .quote-text{font-family:var(--serif);font-weight:200;font-style:italic;font-size:clamp(1.25rem,2.8vw,1.8rem);line-height:1.4;color:var(--text);letter-spacing:-.01em;margin-bottom:.55rem;}
+    .quote-attr{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+    .bottom-bar{display:flex;justify-content:space-between;align-items:flex-end;}
+    .species-info{opacity:0;transform:translateY(4px);transition:opacity .7s ease .7s,transform .7s ease .7s;}
+    .species-info.visible{opacity:1;transform:translateY(0);}
+    .species-name{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:.12rem;}
+    .species-loc{font-size:.58rem;letter-spacing:.06em;color:var(--faint);}
+    .controls{display:flex;flex-direction:column;align-items:flex-end;gap:.7rem;}
+    .slide-counter{font-size:.55rem;letter-spacing:.1em;color:var(--faint);}
+    .progress-track{width:110px;height:1px;background:rgba(237,231,219,.15);position:relative;}
+    .progress-fill{position:absolute;top:0;left:0;bottom:0;background:var(--amber);transition:width .1s linear;}
+    .nav-arrows{display:flex;gap:.6rem;}
+    .arrow-btn{background:none;border:1px solid rgba(237,231,219,.18);color:var(--muted);font-family:var(--mono);font-size:.62rem;padding:.28rem .55rem;cursor:pointer;transition:border-color .2s,color .2s;}
+    .arrow-btn:hover{border-color:rgba(237,231,219,.45);color:var(--text);}
+    .apod-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);background:rgba(224,160,64,.1);border:1px solid var(--amber-d);padding:.2rem .6rem;margin-bottom:.5rem;}
+    #music-player{position:fixed;bottom:2.25rem;right:2.5rem;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;}
+    .player-toggle{background:rgba(10,9,6,.85);backdrop-filter:blur(10px);border:1px solid rgba(237,231,219,.15);color:var(--muted);font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem .85rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:color .2s,border-color .2s;}
+    .player-toggle:hover{color:var(--amber);border-color:var(--amber-d);}
+    .player-toggle .dot{width:5px;height:5px;border-radius:50%;background:var(--faint);flex-shrink:0;transition:background .3s;}
+    .player-toggle .dot.playing{background:var(--amber);animation:pulse 1.4s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+    .player-panel{background:rgba(10,9,6,.9);backdrop-filter:blur(12px);border:1px solid rgba(237,231,219,.12);overflow:hidden;width:300px;display:none;}
+    .player-panel.open{display:block;}
+    .player-tabs{display:flex;border-bottom:1px solid rgba(237,231,219,.1);}
+    .p-tab{flex:1;font-family:var(--mono);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding:.5rem;cursor:pointer;text-align:center;border-bottom:1px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;}
+    .p-tab:hover{color:var(--muted);}
+    .p-tab.active{color:var(--amber);border-bottom-color:var(--amber);}
+    .p-panel{display:none;}
+    .p-panel.active{display:block;}
+    .spotify-wrap iframe{display:block;}
+    .player-note{padding:.6rem .75rem;font-size:.55rem;color:var(--faint);font-family:var(--mono);line-height:1.5;border-top:1px solid rgba(237,231,219,.08);}
+    @media(max-width:580px){nav{padding:1.25rem;}.bottom{padding:0 1.25rem 1.5rem;}.nav-links{gap:1.25rem;}#music-player{right:1.25rem;bottom:1.5rem;}.player-panel{width:260px;}}
   </style>
 </head>
 <body>
-
-<nav class="site-nav" id="nav">
-  <a class="nav-brand" href="index.html">[Martin Muchiri]</a>
-  <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="shelf.html">Shelf</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<section class="hero" id="hero">
-
-  <div class="slide slide-1 active">
-    <div class="slide-art">
-      <svg viewBox="0 0 1440 280" preserveAspectRatio="none" aria-hidden="true">
-        <path fill="rgba(0,0,0,.72)" d="M0,220 Q180,200 360,215 Q540,230 720,205 Q900,182 1080,200 Q1260,218 1440,204 L1440,280 L0,280 Z"/>
-        <path fill="rgba(0,0,0,.88)" d="M190,280 L190,175 Q182,160 178,145 Q174,130 182,126 Q186,138 189,128 Q192,114 196,126 Q200,112 204,124 Q208,136 204,148 Q198,162 204,175 L206,280 Z"/>
-        <ellipse cx="194" cy="136" rx="46" ry="28" fill="rgba(0,0,0,.82)"/>
-        <path fill="rgba(0,0,0,.78)" d="M150,148 Q160,130 175,140 Q182,122 196,128 Q205,118 218,132 Q230,122 238,140 Q194,158 150,148 Z"/>
-        <line x1="870" y1="205" x2="870" y2="178" stroke="rgba(0,0,0,.65)" stroke-width="3"/>
-        <path fill="rgba(0,0,0,.6)" d="M848,178 Q858,165 870,170 Q882,165 892,178 Q870,185 848,178 Z"/>
-        <line x1="1100" y1="200" x2="1100" y2="176" stroke="rgba(0,0,0,.5)" stroke-width="2.5"/>
-        <path fill="rgba(0,0,0,.48)" d="M1080,176 Q1090,165 1100,169 Q1110,165 1120,176 Q1100,182 1080,176 Z"/>
-      </svg>
+  <div class="slides" id="slides"></div>
+  <nav>
+    <a href="index.html" class="nav-name">Martin Muchiri</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="shelf.html">Shelf</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="bottom">
+    <div class="quote-wrap" id="quoteWrap">
+      <p class="apod-badge" id="apodBadge" style="display:none;">✦ NASA · Astronomy Picture of the Day</p>
+      <p class="quote-text" id="quoteText"></p>
+      <p class="quote-attr" id="quoteAttr"></p>
+    </div>
+    <div class="bottom-bar">
+      <div class="species-info" id="speciesInfo">
+        <p class="species-name" id="speciesName"></p>
+        <p class="species-loc" id="speciesLoc"></p>
+      </div>
+      <div class="controls">
+        <span class="slide-counter" id="counter">01 / 32</span>
+        <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+        <div class="nav-arrows">
+          <button class="arrow-btn" id="prevBtn">← prev</button>
+          <button class="arrow-btn" id="nextBtn">next →</button>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="slide slide-2">
-    <div class="slide-art">
-      <svg viewBox="0 0 1440 280" preserveAspectRatio="none" aria-hidden="true">
-        <path fill="rgba(0,0,0,.82)" d="M0,280 L0,210 Q30,195 60,175 L72,195 Q105,162 135,142 L150,168 Q185,130 218,110 L232,138 Q268,100 300,82 L316,110 Q352,72 384,58 L400,86 Q440,50 470,40 L488,68 Q525,35 555,28 L572,58 Q612,22 644,16 L662,46 Q702,12 732,6 L750,38 Q792,4 820,0 L840,32 Q878,0 908,0 L928,30 Q968,0 996,0 L1015,28 Q1055,0 1084,0 L1102,28 Q1142,0 1170,0 L1190,30 Q1230,0 1258,0 L1278,28 Q1318,2 1348,0 L1370,28 Q1408,2 1440,0 L1440,280 Z"/>
-      </svg>
+  <div id="music-player">
+    <div class="player-panel" id="playerPanel">
+      <div class="player-tabs">
+        <div class="p-tab active" onclick="switchPTab(this,'piano')">Piano</div>
+        <div class="p-tab" onclick="switchPTab(this,'africa')">Africa</div>
+        <div class="p-tab" onclick="switchPTab(this,'focus')">Focus</div>
+        <div class="p-tab" onclick="switchPTab(this,'ambient')">Ambient</div>
+      </div>
+      <div class="p-panel active" id="ptab-piano">
+        <div class="spotify-wrap"><iframe style="border-radius:0" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3Ogo9pFvBkY?utm_source=generator&theme=0" width="300" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe></div>
+      </div>
+      <div class="p-panel" id="ptab-africa">
+        <div class="spotify-wrap"><iframe style="border-radius:0" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8bXByKnhSmh?utm_source=generator&theme=0" width="300" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe></div>
+      </div>
+      <div class="p-panel" id="ptab-focus">
+        <div class="spotify-wrap"><iframe style="border-radius:0" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWXLeA8Omikj7?utm_source=generator&theme=0" width="300" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe></div>
+      </div>
+      <div class="p-panel" id="ptab-ambient">
+        <div class="spotify-wrap"><iframe style="border-radius:0" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6GwdWRQMQpq?utm_source=generator&theme=0" width="300" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe></div>
+      </div>
+      <p class="player-note">Spotify users: full playback. Others: 30-sec previews.</p>
     </div>
+    <button class="player-toggle" id="playerToggle" onclick="togglePlayer()">
+      <span class="dot" id="playerDot"></span>listen
+    </button>
   </div>
-
-  <div class="slide slide-3">
-    <div class="slide-art">
-      <svg viewBox="0 0 1440 280" preserveAspectRatio="none" aria-hidden="true">
-        <line x1="0" y1="145" x2="1440" y2="145" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
-        <path fill="rgba(0,0,0,.65)" d="M0,182 Q120,168 240,178 Q360,188 480,172 Q600,158 720,170 Q840,183 960,170 Q1080,158 1200,172 Q1320,185 1440,172 L1440,280 L0,280 Z"/>
-        <path fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1" d="M0,175 Q360,165 720,172 Q1080,180 1440,172"/>
-        <path fill="none" stroke="rgba(242,237,228,.2)" stroke-width="1.5" d="M340,108 Q348,101 356,106 Q364,101 372,108"/>
-        <path fill="none" stroke="rgba(242,237,228,.14)" stroke-width="1.5" d="M560,92 Q567,86 574,90 Q581,86 588,90"/>
-        <path fill="none" stroke="rgba(242,237,228,.1)" stroke-width="1.5" d="M780,118 Q786,113 792,116 Q798,113 804,116"/>
-      </svg>
-    </div>
-  </div>
-
-  <div class="slide slide-4">
-    <div class="slide-art">
-      <svg viewBox="0 0 1440 280" preserveAspectRatio="none" aria-hidden="true">
-        <path fill="rgba(0,0,0,.42)" d="M0,280 L0,230 L120,165 L200,195 L330,135 L420,170 L540,115 L630,150 L760,105 L860,148 L980,108 L1080,145 L1200,100 L1310,138 L1440,112 L1440,280 Z"/>
-        <path fill="rgba(0,0,0,.72)" d="M0,280 L0,248 Q120,225 260,240 Q400,255 540,232 Q680,210 820,228 Q960,246 1100,228 Q1240,210 1440,232 L1440,280 Z"/>
-      </svg>
-    </div>
-  </div>
-
-  <div class="slide slide-5">
-    <div class="slide-art">
-      <svg viewBox="0 0 1440 280" preserveAspectRatio="none" aria-hidden="true">
-        <path fill="rgba(0,0,0,.65)" d="M0,280 L0,215 Q200,194 400,210 Q600,226 800,200 Q1000,175 1200,196 Q1350,210 1440,198 L1440,280 Z"/>
-        <line x1="285" y1="210" x2="285" y2="182" stroke="rgba(0,0,0,.9)" stroke-width="4"/>
-        <rect x="258" y="168" width="54" height="16" rx="8" fill="rgba(0,0,0,.88)"/>
-        <line x1="285" y1="192" x2="268" y2="180" stroke="rgba(0,0,0,.8)" stroke-width="2"/>
-        <line x1="285" y1="192" x2="302" y2="180" stroke="rgba(0,0,0,.8)" stroke-width="2"/>
-        <line x1="780" y1="200" x2="780" y2="174" stroke="rgba(0,0,0,.8)" stroke-width="3.5"/>
-        <rect x="756" y="160" width="48" height="16" rx="8" fill="rgba(0,0,0,.78)"/>
-        <line x1="780" y1="182" x2="764" y2="170" stroke="rgba(0,0,0,.7)" stroke-width="2"/>
-        <line x1="780" y1="182" x2="796" y2="170" stroke="rgba(0,0,0,.7)" stroke-width="2"/>
-        <line x1="1200" y1="196" x2="1200" y2="174" stroke="rgba(0,0,0,.6)" stroke-width="2.5"/>
-        <rect x="1180" y="162" width="40" height="13" rx="6.5" fill="rgba(0,0,0,.58)"/>
-      </svg>
-    </div>
-  </div>
-
-  <div class="slide slide-6">
-    <div class="slide-art">
-      <svg viewBox="0 0 1440 280" preserveAspectRatio="none" aria-hidden="true">
-        <path fill="rgba(0,0,0,.92)" d="M0,255 Q360,240 720,248 Q1080,256 1440,244 L1440,280 L0,280 Z"/>
-        <path fill="rgba(0,0,0,.95)" d="M80,255 Q84,238 90,244 Q95,232 102,240 Q108,228 115,236 Q120,228 126,238 Q132,244 136,255 Z"/>
-        <path fill="rgba(0,0,0,.9)" d="M680,248 L672,218 L675,248 L680,215 L683,248 L688,220 L691,248"/>
-        <path fill="rgba(0,0,0,.95)" d="M1290,244 Q1294,230 1300,236 Q1305,224 1312,232 Q1318,222 1324,230 Q1329,222 1335,232 Q1340,238 1344,244 Z"/>
-      </svg>
-    </div>
-  </div>
-
-  <canvas id="stars-c" aria-hidden="true"></canvas>
-
-  <div class="quote-card active" id="qc-1">
-    <p class="q-label">Language · Nairobi</p>
-    <blockquote>"Language carries culture, and culture carries the entire body of values by which we come to perceive ourselves and our place in the world."</blockquote>
-    <cite>— Ngũgĩ wa Thiong'o, <em>Decolonising the Mind</em></cite>
-  </div>
-  <div class="quote-card" id="qc-2">
-    <p class="q-label">Forest · Aberdare Range</p>
-    <blockquote>"Plants know how to make food and medicine from light and water, and then they give it away."</blockquote>
-    <cite>— Robin Wall Kimmerer, <em>Braiding Sweetgrass</em></cite>
-  </div>
-  <div class="quote-card" id="qc-3">
-    <p class="q-label">Ocean · Mombasa</p>
-    <blockquote>"All that you touch, you change. All that you change, changes you. The only lasting truth is change."</blockquote>
-    <cite>— Octavia E. Butler, <em>Parable of the Sower</em></cite>
-  </div>
-  <div class="quote-card" id="qc-4">
-    <p class="q-label">Highlands · Rift Valley</p>
-    <blockquote>"Each generation must discover its mission, fulfill it or betray it, in relative opacity."</blockquote>
-    <cite>— Frantz Fanon, <em>The Wretched of the Earth</em></cite>
-  </div>
-  <div class="quote-card" id="qc-5">
-    <p class="q-label">Earth · Central Kenya</p>
-    <blockquote>"Today we are faced with a challenge that calls for a shift in our thinking, so that humanity stops threatening its life-support system."</blockquote>
-    <cite>— Wangari Maathai</cite>
-  </div>
-  <div class="quote-card" id="qc-6">
-    <p class="q-label">Night · East Africa</p>
-    <blockquote>"Until the lion learns to write, every story will glorify the hunter."</blockquote>
-    <cite>— African proverb</cite>
-  </div>
-
-  <div class="slide-dots">
-    <button class="dot active" onclick="goTo(0)"></button>
-    <button class="dot" onclick="goTo(1)"></button>
-    <button class="dot" onclick="goTo(2)"></button>
-    <button class="dot" onclick="goTo(3)"></button>
-    <button class="dot" onclick="goTo(4)"></button>
-    <button class="dot" onclick="goTo(5)"></button>
-  </div>
-  <p class="scroll-hint" aria-hidden="true">scroll</p>
-
-</section>
-
-<section class="identity">
-  <div class="id-wrap">
-    <h1 class="id-name">[Martin Muchiri]</h1>
-    <p class="id-line">
-      Researching <em>AI accountability in African education</em> —
-      building the evidence and infrastructure that makes AI work
-      for Kenyan students, not merely on them.
-    </p>
-    <nav class="page-grid">
-      <a class="page-card" href="about.html"><span class="pc-num">01</span><span class="pc-name">About</span><span class="pc-desc">Who is here and why</span></a>
-      <a class="page-card" href="research.html"><span class="pc-num">02</span><span class="pc-name">Research</span><span class="pc-desc">Questions, methods, projects</span></a>
-      <a class="page-card" href="blog.html"><span class="pc-num">03</span><span class="pc-name">Blog</span><span class="pc-desc">Essays, notes, reading responses</span></a>
-      <a class="page-card" href="shelf.html"><span class="pc-num">04</span><span class="pc-name">Shelf</span><span class="pc-desc">Books, music, podcasts</span></a>
-      <a class="page-card" href="contact.html"><span class="pc-num">05</span><span class="pc-name">Contact</span><span class="pc-desc">Get in touch</span></a>
-    </nav>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <p>[Martin Muchiri] · Nairobi, Kenya</p>
-  <p>2026</p>
-</footer>
-
-<script>
-const TOTAL=6,DELAY=9000;
-const slides=document.querySelectorAll('.slide');
-const quotes=document.querySelectorAll('.quote-card');
-const dots=document.querySelectorAll('.dot');
-const starsEl=document.getElementById('stars-c');
-let current=0,timer=null;
-function goTo(n){
-  slides[current].classList.remove('active');
-  quotes[current].classList.remove('active');
-  dots[current].classList.remove('active');
-  current=n;
-  slides[current].classList.add('active');
-  quotes[current].classList.add('active');
-  dots[current].classList.add('active');
-  starsEl.style.opacity=current===5?'1':'0';
-  resetTimer();
-}
-function next(){goTo((current+1)%TOTAL);}
-function resetTimer(){clearInterval(timer);timer=setInterval(next,DELAY);}
-resetTimer();
-(function drawStars(){
-  const W=window.innerWidth,H=window.innerHeight;
-  starsEl.width=W;starsEl.height=H;
-  const ctx=starsEl.getContext('2d');
-  const N=Math.floor(W*H/4000);
-  for(let i=0;i<N;i++){
-    const x=Math.random()*W,y=Math.random()*H*.72;
-    const r=Math.random()*1.1+0.2,a=Math.random()*.6+.15;
-    ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(242,237,228,${a.toFixed(2)})`;ctx.fill();
+  <script>
+  const photoSlides=[
+    {img:'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1920&q=80',quote:'A tree that grows in the shade of another will die small.',attr:'— Tanzanian proverb',name:'Vachellia tortilis · Umbrella Acacia',loc:'Maasai Mara, Kenya'},
+    {img:'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1920&q=80',quote:'The birds do not inherit the air. They earn it, every morning.',attr:'— Anonymous',name:'Phoeniconaias minor · Lesser Flamingo',loc:'Lake Nakuru, Kenya'},
+    {img:'https://images.unsplash.com/photo-1581852017103-68ac65514cf7?auto=format&fit=crop&w=1920&q=80',quote:'Until the lion learns to write, every story will glorify the hunter.',attr:'— Igbo proverb',name:'Loxodonta africana · African Elephant',loc:'Amboseli, Kenya'},
+    {img:'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1920&q=80',quote:'The earth does not belong to us. We belong to the earth.',attr:'— Chief Seattle',name:'Cenchrus ciliaris · Buffel Grass',loc:'Tsavo East, Kenya'},
+    {img:'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1920&q=80',quote:'Not all those who wander are lost.',attr:'— J.R.R. Tolkien',name:'Giraffa reticulata · Reticulated Giraffe',loc:'Laikipia, Kenya'},
+    {img:'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1920&q=80',quote:'The older the tree, the deeper the root.',attr:'— African proverb',name:'Adansonia digitata · Baobab',loc:'Kilifi Coast, Kenya'},
+    {img:'https://images.unsplash.com/photo-1535941339077-2dd1c7963098?auto=format&fit=crop&w=1920&q=80',quote:'Water does not ask where it is going. It trusts the river to know.',attr:'— After Lao Tzu',name:'Connochaetes taurinus · Blue Wildebeest',loc:'Mara River, Kenya'},
+    {img:'https://picsum.photos/id/15/1920/1080',quote:'To name a thing is to begin to know it.',attr:'— Toni Morrison',name:'',loc:''},
+    {img:'https://picsum.photos/id/28/1920/1080',quote:'The mountains are calling and I must go.',attr:'— John Muir',name:'',loc:''},
+    {img:'https://picsum.photos/id/37/1920/1080',quote:'Wilderness is not a luxury but a necessity of the human spirit.',attr:'— Edward Abbey',name:'',loc:''},
+    {img:'https://picsum.photos/id/63/1920/1080',quote:'In every walk with nature, one receives far more than he seeks.',attr:'— John Muir',name:'',loc:''},
+    {img:'https://picsum.photos/id/98/1920/1080',quote:'What you are is what you have been. What you will be is what you do now.',attr:'— Buddha',name:'',loc:''},
+    {img:'https://picsum.photos/id/110/1920/1080',quote:'I am not afraid of storms, for I am learning how to sail my ship.',attr:'— Louisa May Alcott',name:'',loc:''},
+    {img:'https://picsum.photos/id/127/1920/1080',quote:'A child who is not embraced by the village will burn it down to feel its warmth.',attr:'— African proverb',name:'',loc:''},
+    {img:'https://picsum.photos/id/188/1920/1080',quote:'The function of education is to teach one to think intensively and to think critically.',attr:'— Martin Luther King Jr.',name:'',loc:''},
+    {img:'https://picsum.photos/id/213/1920/1080',quote:'Technology is neither good nor bad; nor is it neutral.',attr:'— Melvin Kranzberg',name:'',loc:''},
+    {img:'https://picsum.photos/id/334/1920/1080',quote:'I am because we are.',attr:'— Ubuntu philosophy',name:'',loc:''},
+    {img:'https://picsum.photos/id/355/1920/1080',quote:'Injustice anywhere is a threat to justice everywhere.',attr:'— Martin Luther King Jr.',name:'',loc:''},
+    {img:'https://picsum.photos/id/396/1920/1080',quote:'The opposite of poverty is not wealth. The opposite of poverty is justice.',attr:'— Bryan Stevenson',name:'',loc:''},
+    {img:'https://picsum.photos/id/431/1920/1080',quote:'To educate a woman is to educate a nation.',attr:'— African proverb',name:'',loc:''},
+    {img:'https://picsum.photos/id/447/1920/1080',quote:'I write because I do not know what I think until I read what I say.',attr:'— Flannery O\'Connor',name:'',loc:''},
+    {img:'https://picsum.photos/id/503/1920/1080',quote:'Knowledge is like a garden: if it is not cultivated, it cannot be harvested.',attr:'— African proverb',name:'',loc:''},
+    {img:'https://picsum.photos/id/534/1920/1080',quote:'The world always seems brighter when you have just made something that was not there before.',attr:'— Neil Gaiman',name:'',loc:''},
+    {img:'https://picsum.photos/id/570/1920/1080',quote:'What we observe is not nature itself, but nature exposed to our method of questioning.',attr:'— Werner Heisenberg',name:'',loc:''},
+    {img:'https://picsum.photos/id/618/1920/1080',quote:'The test of progress is whether we provide enough for those who have little.',attr:'— Franklin D. Roosevelt',name:'',loc:''},
+    {img:'https://picsum.photos/id/683/1920/1080',quote:'Language is a skin: I rub my language against the other.',attr:'— Roland Barthes',name:'',loc:''},
+    {img:'https://picsum.photos/id/718/1920/1080',quote:'The most common way people give up their power is by thinking they do not have any.',attr:'— Alice Walker',name:'',loc:''},
+    {img:'https://picsum.photos/id/760/1920/1080',quote:'Until you make the unconscious conscious, it will direct your life and you will call it fate.',attr:'— C.G. Jung',name:'',loc:''},
+    {img:'https://picsum.photos/id/833/1920/1080',quote:'We are what we repeatedly do.',attr:'— Aristotle',name:'',loc:''},
+    {img:'https://picsum.photos/id/488/1920/1080',quote:'The world is not a problem to be solved; it is a living being to which we belong.',attr:'— Llewelyn Vaughan-Lee',name:'',loc:''},
+  ];
+  // VIDEO SLIDES — replace videoId values with any YouTube IDs you like
+  // Good search: "4K African wildlife ambient relaxing" on YouTube
+  const videoSlides=[
+    {isVideo:true,videoId:'Gu2rEp_SZSg',quote:'Look deep into nature, and then you will understand everything better.',attr:'— Albert Einstein',name:'Video — replace ID in index.html',loc:''},
+    {isVideo:true,videoId:'mF8wmpGaUP8',quote:'The silence of nature is very real. It surrounds you, you can feel it.',attr:'— Ted Trueblood',name:'Video — replace ID in index.html',loc:''},
+  ];
+  let slides=[...photoSlides];
+  slides.splice(10,0,videoSlides[0]);
+  slides.splice(22,0,videoSlides[1]);
+  const slidesEl=document.getElementById('slides');
+  function buildSlides(){
+    slidesEl.innerHTML='';
+    slides.forEach((s,i)=>{
+      const el=document.createElement('div');
+      el.className='slide'+(s.isVideo?' video-slide':'')+(i===0?' active':'');
+      if(s.isVideo){
+        el.innerHTML=`<div class="video-wrap"><iframe src="https://www.youtube.com/embed/${s.videoId}?autoplay=1&mute=1&loop=1&playlist=${s.videoId}&controls=0&showinfo=0&rel=0&modestbranding=1" allow="autoplay;encrypted-media" allowfullscreen></iframe></div>`;
+      }else{
+        el.style.backgroundImage=`url('${s.img}')`;
+      }
+      slidesEl.appendChild(el);
+    });
   }
-  for(let i=0;i<8;i++){
-    const x=Math.random()*W,y=Math.random()*H*.55;
-    ctx.beginPath();ctx.arc(x,y,1.6,0,Math.PI*2);
-    ctx.fillStyle='rgba(242,237,228,0.85)';ctx.fill();
+  buildSlides();
+  let cur=0,timer=null,progress=0,paused=false;
+  const DUR=9500,TICK=100;
+  function showSlide(n){
+    const els=document.querySelectorAll('.slide');
+    els[cur].classList.remove('active');
+    document.getElementById('quoteWrap').classList.remove('visible');
+    document.getElementById('speciesInfo').classList.remove('visible');
+    cur=(n+slides.length)%slides.length;
+    els[cur].classList.add('active');
+    const s=slides[cur];
+    setTimeout(()=>{
+      document.getElementById('quoteText').textContent=s.quote;
+      document.getElementById('quoteAttr').textContent=s.attr;
+      document.getElementById('speciesName').textContent=s.name;
+      document.getElementById('speciesLoc').textContent=s.loc;
+      document.getElementById('apodBadge').style.display=s.isAPOD?'inline-flex':'none';
+      document.getElementById('quoteWrap').classList.add('visible');
+      document.getElementById('speciesInfo').classList.add('visible');
+    },500);
+    document.getElementById('counter').textContent=String(cur+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+    progress=0;document.getElementById('fill').style.width='0%';
   }
-})();
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>40)},{passive:true});
-document.addEventListener('keydown',e=>{
-  if(e.key==='ArrowRight'||e.key==='ArrowDown')next();
-  if(e.key==='ArrowLeft'||e.key==='ArrowUp')goTo((current-1+TOTAL)%TOTAL);
-});
-let touchX=0;
-const h=document.querySelector('.hero');
-h.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:true});
-h.addEventListener('touchend',e=>{
-  const d=touchX-e.changedTouches[0].clientX;
-  if(Math.abs(d)>50)d>0?next():goTo((current-1+TOTAL)%TOTAL);
-},{passive:true});
-</script>
+  function tick(){if(paused)return;progress+=TICK;document.getElementById('fill').style.width=Math.min((progress/DUR)*100,100)+'%';if(progress>=DUR)showSlide(cur+1);}
+  function startTimer(){clearInterval(timer);timer=setInterval(tick,TICK);}
+  document.getElementById('nextBtn').onclick=()=>{showSlide(cur+1);startTimer();};
+  document.getElementById('prevBtn').onclick=()=>{showSlide(cur-1);startTimer();};
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){showSlide(cur+1);startTimer();}if(e.key==='ArrowLeft'){showSlide(cur-1);startTimer();}});
+  document.querySelector('.bottom').addEventListener('mouseenter',()=>{paused=true;});
+  document.querySelector('.bottom').addEventListener('mouseleave',()=>{paused=false;});
+  showSlide(0);startTimer();
+  async function fetchAPOD(){try{const r=await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');const d=await r.json();if(d.media_type==='image'){slides.unshift({img:d.hdurl||d.url,quote:d.title,attr:'— NASA APOD · '+d.date,name:d.copyright?'© '+d.copyright:'NASA / APOD',loc:'Astronomy Picture of the Day',isAPOD:true});buildSlides();showSlide(0);startTimer();}}catch(e){}}
+  fetchAPOD();
+  function togglePlayer(){const p=document.getElementById('playerPanel'),d=document.getElementById('playerDot');p.classList.toggle('open');d.classList.toggle('playing',p.classList.contains('open'));}
+  function switchPTab(el,id){document.querySelectorAll('.p-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.p-panel').forEach(p=>p.classList.remove('active'));el.classList.add('active');document.getElementById('ptab-'+id).classList.add('active');}
+  </script>
 </body>
 </html>
