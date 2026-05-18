@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Martin Muchiri's reading shelf — books, papers, podcasts, and media on AI, education, and Africa." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shelf — Martin Muchiri" />
+  <meta property="og:description" content="Books, papers, podcasts, and media. What I'm reading, watching, and listening to." />
+  <meta property="og:image" content="https://muchirimartin.github.io/assets/photo.jpg" />
+  <meta property="og:url" content="https://muchirimartin.github.io/shelf.html" />
+  <meta name="twitter:card" content="summary" />
   <title>Shelf</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111009'/><circle cx='16' cy='16' r='6' fill='none' stroke='%23D4923A' stroke-width='1.5'/><line x1='16' y1='4' x2='16' y2='10' stroke='%23D4923A' stroke-width='1.5'/><line x1='16' y1='22' x2='16' y2='28' stroke='%23D4923A' stroke-width='1.5'/><line x1='4' y1='16' x2='10' y2='16' stroke='%23D4923A' stroke-width='1.5'/><line x1='22' y1='16' x2='28' y2='16' stroke='%23D4923A' stroke-width='1.5'/></svg>"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=Space+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg:#111009; --s1:#1A1814; --s2:#221F19; --s3:#2A2720;
@@ -16,9 +24,9 @@
       --green:#4A7C5F; --green-d:#2A4A38;
       --red:#8A3A3A; --red-d:#3A1A1A;
       --border:#2E2A24; --border2:#3A362E;
-      --serif:'Fraunces',Georgia,serif;
-      --body:'Source Serif 4',Georgia,serif;
-      --mono:'Space Mono',monospace;
+      --serif:'Cormorant Garamond',Georgia,serif;
+      --body:'DM Sans',system-ui,sans-serif;
+      --mono:'DM Mono',monospace;
       --max:700px; --pad:clamp(1.25rem,5vw,2.5rem);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -100,31 +108,140 @@
     footer a{color:var(--faint);border-color:transparent;}
 
     @media(max-width:520px){.item-card{grid-template-columns:1fr;}.item-actions{flex-direction:row;}.nav-links{gap:.9rem;}}
+    /* ── ADMIN GATING ── */
+    .add-btn{display:none;}           /* hidden for all visitors by default */
+    .item-actions{display:none;}
+    body.admin-mode .add-btn{display:inline-flex;}
+    body.admin-mode .item-actions{display:flex;}
+    /* ── LOCK BUTTON ── */
+    .admin-lock-btn{background:none;border:none;cursor:pointer;color:var(--faint);padding:.3rem;
+      min-height:36px;min-width:36px;display:flex;align-items:center;justify-content:center;
+      transition:color .2s,border-color .2s;border-radius:2px;flex-shrink:0;}
+    .admin-lock-btn:hover{color:var(--amber);}
+    body.admin-mode .admin-lock-btn{color:var(--amber);}
+    .admin-lock-btn svg{width:14px;height:14px;}
+    /* ── PIN MODAL ── */
+    #pin-overlay{display:none;position:fixed;inset:0;z-index:300;
+      background:rgba(0,0,0,.72);align-items:center;justify-content:center;}
+    #pin-overlay.open{display:flex;}
+    #pin-modal{background:var(--surface);border:1px solid var(--border2);
+      padding:1.75rem 1.75rem 1.5rem;width:260px;display:flex;flex-direction:column;gap:1.1rem;}
+    #pin-modal h3{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--amber);}
+    #pin-input{background:var(--bg);border:1px solid var(--border2);color:var(--text);
+      font-family:var(--mono);font-size:1.6rem;letter-spacing:.55em;text-align:center;
+      padding:.6rem .6rem .6rem 1.2rem;outline:none;width:100%;transition:border-color .2s;}
+    #pin-input:focus{border-color:var(--amber-d);}
+    #pin-input.pin-err{border-color:#8A3A3A;animation:pinshake .3s ease;}
+    @keyframes pinshake{0%,100%{transform:translateX(0);}30%{transform:translateX(-7px);}70%{transform:translateX(7px);}}
+    .pin-actions{display:flex;gap:.5rem;}
+    .pin-actions button{flex:1;font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;
+      text-transform:uppercase;padding:.55rem;border:1px solid var(--border2);
+      background:none;cursor:pointer;transition:color .2s,border-color .2s;}
+    .pin-unlock{color:var(--amber)!important;border-color:var(--amber-d)!important;}
+    .pin-unlock:hover{color:var(--amber-g)!important;border-color:var(--amber)!important;}
+    .pin-cancel{color:var(--muted);}
+    .pin-cancel:hover{color:var(--text);border-color:var(--border2);}
+    /* ── PHOTO NAV ── */
+    .nav-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;border:1.5px solid var(--amber-d);flex-shrink:0;}
+    .nav-id-with-photo{display:flex;align-items:center;gap:.65rem;text-decoration:none;border:none;}
+    .nav-id-with-photo:hover{border:none;}
+    .nav-id-group{display:flex;align-items:center;}
+    /* ── NEW STATUS BADGES (Task 2) ── */
+    .status-complete{color:var(--green);background:var(--green-d);}
+    .status-in-progress{color:var(--amber);background:rgba(212,146,58,.1);}
+    .status-not-started{color:var(--faint);background:var(--s2);}
+    .status-on-hold{color:var(--muted);background:var(--s2);border:1px solid var(--border);}
+    /* abandoned already exists as .status-abandoned */
+
+    /* ── MOBILE NAV (Task 6) ── */
+    .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;
+      cursor:pointer;padding:.5rem;min-height:44px;min-width:44px;align-items:center;
+      justify-content:center;flex-shrink:0;}
+    .nav-burger span{display:block;width:20px;height:1.5px;background:var(--muted);
+      transition:transform .25s,opacity .25s;}
+    .mobile-nav{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;
+      flex-direction:column;padding:2rem clamp(1rem,5vw,2.5rem);
+      transform:translateX(100%);transition:transform .28s ease;pointer-events:none;}
+    .mobile-nav.open{transform:translateX(0);pointer-events:auto;}
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;
+      border-bottom:1px solid var(--border);padding-bottom:1.25rem;margin-bottom:2rem;}
+    .mobile-nav-id{font-family:var(--serif);font-size:1rem;color:var(--muted);}
+    .mobile-nav-close{background:none;border:1px solid var(--border);color:var(--muted);
+      font-size:.9rem;cursor:pointer;min-height:44px;min-width:44px;display:flex;
+      align-items:center;justify-content:center;transition:color .2s,border-color .2s;}
+    .mobile-nav-close:hover{color:var(--amber);border-color:var(--amber-d);}
+    .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:1.5rem;}
+    .mobile-nav-links a{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,6vw,2.2rem);
+      color:var(--text);text-decoration:none;border:none;transition:color .2s;}
+    .mobile-nav-links a:hover,.mobile-nav-links a.current{color:var(--amber);}
+    @media(max-width:700px){
+      .nav-burger{display:flex;}
+      .nav-links{display:none;}
+      .nav-home{display:none;}
+    }
+    /* ── FOCUS STYLES (Task 7) ── */
+    :focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+    /* ── RESPONSIVE TYPOGRAPHY ── */
+    h1{font-size:clamp(1.7rem,5vw,2.75rem);}
+    @media(max-width:480px){
+      .page-header{padding:2rem 0 1.5rem;}
+      .wrap{padding:0 1rem;}
+      nav{padding:.75rem 1rem;}
+    }
+    @media(max-width:600px){
+      .item-card{grid-template-columns:1fr;}
+      .filter-bar{flex-wrap:wrap;gap:.4rem;}
+      .add-form{grid-template-columns:1fr!important;}
+      .add-form input,.add-form select,.add-form button{width:100%;}
+    }
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:1rem;z-index:999;background:var(--amber);color:var(--bg);padding:.5rem 1rem;font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;border:none;text-decoration:none;">Skip to content</a>
 
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="mark" title="Home">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
       </a>
+      <div class="nav-id-group">
+        <a href="index.html" class="nav-id-with-photo">
+          <img src="assets/photo.jpg" alt="Martin Muchiri" class="nav-avatar" onerror="this.style.display='none'" loading="lazy"/>
+          <div>
+            <span style="display:block;font-family:var(--serif);font-size:.92rem;color:var(--text);letter-spacing:.01em;">Martin Muchiri</span>
+            <span style="display:block;font-family:var(--mono);font-size:.55rem;letter-spacing:.07em;color:var(--muted);">AI accountability · African education · Nairobi</span>
+          </div>
+        </a>
+      </div>
       <ul class="nav-links">
-        <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>About</a></li>
-        <li><a href="research.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>Research</a></li>
-        <li><a href="blog.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Blog</a></li>
+        <li><a href="about.html" aria-label="About"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>About</a></li>
+        <li><a href="research.html" aria-label="Research"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>Research</a></li>
+        <li><a href="blog.html" aria-label="Blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Blog</a></li>
         <li><a href="shelf.html" class="cur"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>Shelf</a></li>
-        <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Contact</a></li>
-      </ul>
+        <li><a href="contact.html" aria-label="Contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Contact</a></li>
+      
+      <button class="nav-burger" id="navBurger" onclick="toggleNav()" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </ul>
     </div>
   </nav>
 
-  <main>
+  <main id="main-content">
     <div class="wrap">
       <div class="page-header">
-        <p class="eyebrow">Shelf</p>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
+          <p class="eyebrow">Shelf</p>
+          <button class="admin-lock-btn" id="adminLockBtn" onclick="openPinModal()"
+                  aria-label="Admin login" title="Admin">
+            <!-- lock icon — swaps to unlocked state via JS -->
+            <svg id="lockIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="11" width="18" height="11" rx="2"/>
+              <path d="M7 11V7a5 5 0 0110 0v4"/>
+            </svg>
+          </button>
+        </div>
         <h1>What I am reading,<br>listening to, watching</h1>
-        <p class="header-sub">Add anything. Rate it. Come back to it.</p>
+        <p class="header-sub" id="headerSub">A reading and media log.</p>
       </div>
 
       <div class="tabs">
@@ -175,6 +292,20 @@
     <p><a href="index.html">← home</a></p>
   </footer>
 
+  <!-- PIN modal — admin login -->
+  <div id="pin-overlay">
+    <div id="pin-modal" role="dialog" aria-modal="true" aria-label="Admin login">
+      <h3>Admin access</h3>
+      <input type="password" id="pin-input" maxlength="4" placeholder="· · · ·"
+             autocomplete="off" inputmode="numeric"
+             onkeydown="if(event.key==='Enter')checkPin()"/>
+      <div class="pin-actions">
+        <button class="pin-unlock" onclick="checkPin()">Unlock</button>
+        <button class="pin-cancel" onclick="closePinModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <div class="overlay" id="overlay">
     <div class="modal">
       <h2 id="modal-title">Add to shelf</h2>
@@ -190,6 +321,12 @@
           <option value="watching">Watching</option>
           <option value="occasional">Occasional</option>
           <option value="abandoned">Abandoned</option>
+          <optgroup label="── New ──">
+            <option value="in-progress">In Progress</option>
+            <option value="complete">Complete</option>
+            <option value="not-started">Not Started</option>
+            <option value="on-hold">On Hold</option>
+          </optgroup>
         </select>
       </div>
       <div class="field">
@@ -215,8 +352,8 @@
   function load(){try{return JSON.parse(localStorage.getItem(KEY))||{books:[],music:[],pods:[],gallery:[]};}catch{return{books:[],music:[],pods:[],gallery:[]};}}
   function save(d){localStorage.setItem(KEY,JSON.stringify(d));}
 
-  const statusClass={reading:'status-reading',done:'status-done',next:'status-next',listening:'status-listening',watching:'status-watching',occasional:'status-occasional',abandoned:'status-abandoned'};
-  const statusLabel={reading:'Reading',done:'Done',next:'Next up',listening:'Listening',watching:'Watching',occasional:'Occasional',abandoned:'Abandoned'};
+  const statusClass={reading:'status-reading',done:'status-done',next:'status-next',listening:'status-listening',watching:'status-watching',occasional:'status-occasional',abandoned:'status-abandoned','in-progress':'status-in-progress','complete':'status-complete','not-started':'status-not-started','on-hold':'status-on-hold'};
+  const statusLabel={reading:'Reading',done:'Done',next:'Next up',listening:'Listening',watching:'Watching',occasional:'Occasional',abandoned:'Abandoned','in-progress':'In Progress','complete':'Complete','not-started':'Not Started','on-hold':'On Hold'};
 
   function renderStars(n){return Array.from({length:5},(_,i)=>`<span class="item-star${i<n?' lit':''}">★</span>`).join('');}
 
@@ -248,9 +385,7 @@
           ${item.note?`<p class="item-review">${esc(item.note)}</p>`:''}
           ${item.status?`<span class="item-status ${statusClass[item.status]||''}">${statusLabel[item.status]||item.status}</span>`:''}
         </div>
-        <div class="item-actions">
-          <button class="del-btn" data-type="${type}" data-idx="${idx}" title="Remove">✕</button>
-        </div>
+        ${isAdmin()?`<div class="item-actions"><button class="del-btn" data-type="${type}" data-idx="${idx}" aria-label="Remove ${esc(item.title)}">✕</button></div>`:''}
       </div>`).join('');
   }
 
@@ -336,7 +471,72 @@
     if(data[type]){data[type].splice(idx,1);save(data);renderGrid(type);}
   });
 
-  // Seed first visit
+  /* ── ADMIN PIN SYSTEM ─────────────────────────────────────────────── */
+  const ADMIN_PIN = '0000'; // ← change this before publishing
+
+  function isAdmin(){
+    return sessionStorage.getItem('shelf_admin') === '1';
+  }
+
+  function applyAdminState(){
+    if(isAdmin()){
+      document.body.classList.add('admin-mode');
+      document.getElementById('headerSub').textContent = 'Add anything. Rate it. Come back to it.';
+      // swap to unlocked icon
+      document.getElementById('lockIcon').innerHTML =
+        '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0"/>';
+      document.getElementById('adminLockBtn').title = 'Admin: locked in (click to log out)';
+    } else {
+      document.body.classList.remove('admin-mode');
+      document.getElementById('headerSub').textContent = 'A reading and media log.';
+      document.getElementById('lockIcon').innerHTML =
+        '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>';
+      document.getElementById('adminLockBtn').title = 'Admin login';
+    }
+    renderAll(); // re-render cards to show/hide delete buttons
+  }
+
+  function openPinModal(){
+    // If already admin, clicking the lock icon logs out instead
+    if(isAdmin()){
+      sessionStorage.removeItem('shelf_admin');
+      applyAdminState();
+      return;
+    }
+    document.getElementById('pin-input').value = '';
+    document.getElementById('pin-input').classList.remove('pin-err');
+    document.getElementById('pin-overlay').classList.add('open');
+    setTimeout(()=>document.getElementById('pin-input').focus(), 60);
+  }
+
+  function closePinModal(){
+    document.getElementById('pin-overlay').classList.remove('open');
+  }
+
+  function checkPin(){
+    const val = document.getElementById('pin-input').value.trim();
+    if(val === ADMIN_PIN){
+      sessionStorage.setItem('shelf_admin', '1');
+      closePinModal();
+      applyAdminState();
+    } else {
+      const inp = document.getElementById('pin-input');
+      inp.classList.add('pin-err');
+      inp.value = '';
+      setTimeout(()=>inp.classList.remove('pin-err'), 400);
+    }
+  }
+
+  // Close PIN modal on overlay click or Escape
+  document.getElementById('pin-overlay').addEventListener('click', e=>{
+    if(e.target===document.getElementById('pin-overlay')) closePinModal();
+  });
+  document.addEventListener('keydown', e=>{
+    if(e.key==='Escape') closePinModal();
+  });
+
+  // Apply state on page load
+  applyAdminState();
   (function(){
     const d=load();
     if(d.books.length||d.music.length||d.pods.length)return;
@@ -366,5 +566,39 @@
 
   renderAll();
   </script>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="mobile-nav-header">
+    <span class="mobile-nav-id">Martin Muchiri</span>
+    <button class="mobile-nav-close" onclick="closeNav()" aria-label="Close navigation menu">✕</button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="shelf.html">Shelf</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<script>
+/* Mobile nav */
+function toggleNav(){
+  const nav=document.getElementById('mobileNav'),btn=document.getElementById('navBurger');
+  const open=nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+  nav.setAttribute('aria-hidden',!open);
+  document.body.style.overflow=open?'hidden':'';
+}
+function closeNav(){
+  const nav=document.getElementById('mobileNav'),btn=document.getElementById('navBurger');
+  nav.classList.remove('open');
+  btn.setAttribute('aria-expanded','false');
+  nav.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav();});
+</script>
 </body>
 </html>
