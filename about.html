@@ -3,97 +3,136 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Martin Muchiri — AI Accountability · African Education · Nairobi</title>
-  <meta name="description" content="Martin Muchiri is a researcher and data scientist in Nairobi, Kenya, working on AI accountability in African educational contexts, NLP for African languages, and the political economy of EdTech."/>
-  <meta property="og:title" content="Martin Muchiri — AI Accountability · African Education"/>
-  <meta property="og:description" content="Researcher and data scientist based in Nairobi, Kenya. AI accountability in education, NLP for African languages, EdTech critique."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://muchirimartin.github.io/"/>
-  <meta name="theme-color" content="#111009"/>
-  <!-- ANALYTICS: sign up at goatcounter.com (free), replace YOURCODE -->
-  <script data-goatcounter="https://cdelta.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+  <title>About — M. Muchiri</title><!-- CHANGE PER PAGE -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111009'/><circle cx='16' cy='16' r='6' fill='none' stroke='%23D4923A' stroke-width='1.5'/><line x1='16' y1='4' x2='16' y2='10' stroke='%23D4923A' stroke-width='1.5'/><line x1='16' y1='22' x2='16' y2='28' stroke='%23D4923A' stroke-width='1.5'/><line x1='4' y1='16' x2='10' y2='16' stroke='%23D4923A' stroke-width='1.5'/><line x1='22' y1='16' x2='28' y2='16' stroke='%23D4923A' stroke-width='1.5'/></svg>"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,200;1,9..144,300;1,9..144,400&family=Space+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
   <style>
-    :root{--bg:#070605;--text:#EDE7DB;--muted:rgba(237,231,219,.58);--faint:rgba(237,231,219,.32);--amber:#D98C30;--amber-hi:#F0A840;--amber-dim:rgba(217,140,48,.3);--serif:'Fraunces',Georgia,serif;--mono:'Space Mono',monospace;}
+    :root{
+      --bg:#0D0C09;--surface:#181512;--surface2:#201D16;
+      --text:#EDE7DB;--muted:#A09080;--faint:#6A6050;
+      --amber:#C8882E;--amber-d:#7A5018;--amber-g:#E8A84A;
+      --green:#3A6448;--green-d:#1E3428;
+      --border:#282420;--border2:#322E26;
+      --serif:'Cormorant Garamond',Georgia,serif;
+      --body:'DM Sans',system-ui,sans-serif;
+      --mono:'DM Mono',monospace;
+      --max:660px;--pad:clamp(1.25rem,5vw,2.5rem);
+    }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html,body{width:100%;height:100%;overflow:hidden;}
-    body{background:var(--bg);color:var(--text);font-family:var(--mono);-webkit-font-smoothing:antialiased;}
-    ::selection{background:var(--amber-dim);color:var(--text);}
+    html{font-size:17px;scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.8;-webkit-font-smoothing:antialiased;min-height:100vh;}
+    ::selection{background:var(--amber-d);color:var(--text);}
+    a{color:var(--amber);text-decoration:none;border-bottom:1px solid var(--amber-d);transition:color .2s,border-color .2s;}
+    a:hover{color:var(--amber-g);border-color:var(--amber);}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad);}
 
-    /* SLIDES */
-    .slides{position:fixed;inset:0;z-index:0;}
-    .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 2.4s ease;}
-    .slide.active{opacity:1;}
-    /* Stronger vignette for legibility */
-    .slide::after{content:'';position:absolute;inset:0;background:
-      linear-gradient(to bottom,
-        rgba(5,4,3,.75) 0%,
-        rgba(5,4,3,.05) 22%,
-        rgba(5,4,3,.0) 45%,
-        rgba(5,4,3,.38) 68%,
-        rgba(5,4,3,.92) 100%);}
+    /* ── HERO STRIP ── */
+    .hero-strip{
+      height:300px;background-size:cover;background-position:center;
+      position:relative;overflow:hidden;
+    }
+    /* Much stronger gradient so text is always legible */
+    .hero-strip::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(
+        to bottom,
+        rgba(13,12,9,.15) 0%,
+        rgba(13,12,9,.15) 40%,
+        rgba(13,12,9,.7)  65%,
+        rgba(13,12,9,1)   100%
+      );
+    }
+    .hero-strip-text{
+      position:absolute;bottom:1.75rem;left:var(--pad);z-index:2;
+    }
+    .hero-eyebrow{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:.55rem;}
+    .hero-h1{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(1.9rem,4.5vw,2.5rem);line-height:1.15;letter-spacing:-.01em;color:var(--text);text-shadow:0 2px 12px rgba(0,0,0,.7);}
 
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;}
-    .nav-id{font-family:var(--serif);font-weight:300;font-size:.85rem;color:var(--text);text-decoration:none;letter-spacing:.02em;opacity:.88;}
-    .nav-id:hover{opacity:1;}
-    .nav-links{display:flex;gap:1.6rem;list-style:none;}
-    .nav-links a{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:.3rem;}
+    /* ── NAV ── */
+    nav{position:sticky;top:0;z-index:100;background:rgba(13,12,9,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.9rem var(--pad);}
+    .nav-inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+    .nav-home{width:32px;height:32px;border:1px solid var(--border2);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--faint);flex-shrink:0;transition:color .2s,border-color .2s;}
+    .nav-home:hover{color:var(--amber);border-color:var(--amber-d);}
+    .nav-home svg{width:14px;height:14px;}
+    /* Rotating quote — now visible, not faint */
+    .nav-quote{font-family:var(--serif);font-style:italic;font-size:.8rem;font-weight:300;color:var(--muted);max-width:240px;text-align:center;line-height:1.35;}
+    .nav-links{display:flex;gap:1.25rem;list-style:none;flex-wrap:wrap;}
+    .nav-links a{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);border:none;transition:color .2s;display:flex;align-items:center;gap:.28rem;}
     .nav-links a svg{width:11px;height:11px;flex-shrink:0;}
-    .nav-links a:hover{color:var(--text);}
+    .nav-links a:hover,.nav-links a.current{color:var(--amber);border:none;}
 
-    /* BOTTOM */
-    .bottom{position:fixed;bottom:0;left:0;right:0;z-index:20;padding:0 2.5rem 2rem;}
-    .quote-wrap{max-width:680px;margin-bottom:1.4rem;opacity:0;transform:translateY(10px);transition:opacity 1s ease .5s,transform 1s ease .5s;}
-    .quote-wrap.visible{opacity:1;transform:translateY(0);}
-    .apod-tag{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);background:rgba(217,140,48,.1);border:1px solid var(--amber-dim);padding:.18rem .55rem;margin-bottom:.55rem;display:none;align-items:center;gap:.35rem;}
-    .apod-tag.show{display:inline-flex;}
-    .quote-text{font-family:var(--serif);font-weight:200;font-style:italic;font-size:clamp(1.2rem,2.6vw,1.72rem);line-height:1.45;color:var(--text);letter-spacing:-.01em;margin-bottom:.5rem;text-shadow:0 1px 8px rgba(0,0,0,.6);}
-    .quote-attr{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
-    .bottom-bar{display:flex;justify-content:space-between;align-items:flex-end;}
-    .species-wrap{opacity:0;transform:translateY(5px);transition:opacity .7s ease .8s,transform .7s ease .8s;}
-    .species-wrap.visible{opacity:1;transform:translateY(0);}
-    .species-name{font-size:.54rem;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin-bottom:.1rem;}
-    .species-loc{font-size:.54rem;color:var(--faint);margin-bottom:.3rem;}
-    .learn-btn{font-family:var(--mono);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);background:none;border:1px solid rgba(237,231,219,.14);padding:.2rem .55rem;cursor:pointer;transition:color .2s,border-color .2s;display:none;}
-    .learn-btn.show{display:inline-block;}
-    .learn-btn:hover{color:var(--amber);border-color:var(--amber-dim);}
-    .controls{display:flex;flex-direction:column;align-items:flex-end;gap:.65rem;}
-    .counter{font-size:.5rem;letter-spacing:.1em;color:var(--faint);}
-    .prog-track{width:100px;height:1px;background:rgba(237,231,219,.14);}
-    .prog-fill{height:100%;background:var(--amber);}
-    .arrows{display:flex;gap:.55rem;}
-    .arr{background:none;border:1px solid rgba(237,231,219,.16);color:var(--muted);font-family:var(--mono);font-size:.58rem;padding:.26rem .52rem;cursor:pointer;transition:border-color .2s,color .2s;}
-    .arr:hover{border-color:rgba(237,231,219,.42);color:var(--text);}
+    /* ── CONTENT ── */
+    .section{padding:2.5rem 0;}
+    .section+.section{border-top:1px solid var(--border);}
+    .label{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem;}
+    .label::after{content:'';flex:1;height:1px;background:var(--border);}
 
-    /* INFO DRAWER */
-    .drawer{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(7,6,5,.95);backdrop-filter:blur(18px);border-top:1px solid rgba(237,231,219,.1);padding:2rem 2.5rem 2.5rem;transform:translateY(100%);transition:transform .4s ease;max-height:72vh;overflow-y:auto;}
-    .drawer.open{transform:translateY(0);}
-    .drawer-close{position:absolute;top:1.25rem;right:2rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:none;border:none;cursor:pointer;transition:color .2s;}
-    .drawer-close:hover{color:var(--amber);}
-    .drawer-title{font-family:var(--serif);font-weight:300;font-style:italic;font-size:1.5rem;color:var(--text);margin-bottom:.3rem;}
-    .drawer-loc{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem;}
-    .drawer-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-    .drawer-block h4{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:.65rem;}
-    .drawer-block p{font-family:var(--serif);font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.78;}
-    .drawer-class{font-family:var(--mono);font-size:.54rem;color:var(--faint);line-height:2;letter-spacing:.04em;}
-    .drawer-class span{color:var(--muted);}
-    .drawer-facts{list-style:none;display:flex;flex-direction:column;gap:.45rem;}
-    .drawer-facts li{font-family:var(--serif);font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.62;padding-left:1rem;position:relative;}
-    .drawer-facts li::before{content:'✦';position:absolute;left:0;color:var(--amber);font-size:.5rem;top:.3em;}
+    /* PROSE — larger, more readable */
+    .prose p{font-size:1.02rem;font-weight:300;line-height:1.9;color:var(--text);max-width:580px;}
+    .prose p+p{margin-top:1.3rem;}
+    .pull{font-family:var(--serif);font-size:1.18rem;font-weight:300;font-style:italic;color:var(--amber);border-left:2px solid var(--amber-d);padding:.3rem 0 .3rem 1.25rem;margin:2rem 0;line-height:1.55;}
 
-    /* MUSIC PLAYER — Spotify only, no YouTube */
-    #mplayer{position:fixed;bottom:1.75rem;right:2.5rem;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:.45rem;}
-    .mp-toggle{background:rgba(7,6,5,.9);backdrop-filter:blur(12px);border:1px solid rgba(237,231,219,.14);color:var(--muted);font-family:var(--mono);font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;padding:.45rem .8rem;cursor:pointer;display:flex;align-items:center;gap:.45rem;transition:color .2s,border-color .2s;}
-    .mp-toggle:hover{color:var(--amber-hi);border-color:var(--amber-dim);}
-    .mp-dot{width:5px;height:5px;border-radius:50%;background:var(--faint);flex-shrink:0;transition:background .3s;}
-    .mp-dot.on{background:var(--amber);animation:pulse 1.5s ease-in-out infinite;}
-    @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.28;}}
-    .mp-panel{background:rgba(7,6,5,.96);backdrop-filter:blur(16px);border:1px solid rgba(237,231,219,.1);width:310px;display:none;overflow:hidden;}
+    /* RESEARCH */
+    .r-item{padding:1.75rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;}
+    .r-item:first-child{border-top:1px solid var(--border);}
+    .r-num{font-family:var(--mono);font-size:.6rem;color:var(--amber-d);padding-top:.25rem;}
+    .r-item h3{font-family:var(--serif);font-weight:400;font-size:1.05rem;color:var(--text);margin-bottom:.5rem;line-height:1.35;}
+    .r-item p{font-size:.88rem;color:var(--muted);line-height:1.72;max-width:520px;}
+    .r-status{display:inline-block;margin-top:.75rem;font-family:var(--mono);font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green);background:var(--green-d);padding:.18rem .6rem;border-radius:2px;}
+
+    /* BLOG */
+    .b-list{list-style:none;}
+    .b-item{padding:1.75rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start;}
+    .b-item:first-child{border-top:1px solid var(--border);}
+    .b-cat{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.45rem;}
+    .b-title{font-family:var(--serif);font-weight:400;font-size:1.05rem;color:var(--text);line-height:1.4;margin-bottom:.45rem;}
+    .b-title a{color:var(--text);border-color:transparent;}
+    .b-title a:hover{color:var(--amber-g);border-color:var(--amber-d);}
+    .b-excerpt{font-size:.88rem;color:var(--muted);line-height:1.65;max-width:460px;}
+    .b-date{font-family:var(--mono);font-size:.6rem;color:var(--faint);white-space:nowrap;}
+
+    /* NOW */
+    .now-grid{display:grid;gap:.65rem;}
+    .now-item{display:flex;align-items:flex-start;gap:.75rem;padding:.9rem 1rem;background:var(--surface);border:1px solid var(--border);}
+    .now-dot{width:5px;height:5px;border-radius:50%;background:var(--amber-d);margin-top:.6rem;flex-shrink:0;}
+    .now-text{font-size:.9rem;color:var(--muted);line-height:1.68;}
+    .now-text em{color:var(--text);font-style:italic;}
+
+    /* TAGS */
+    .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:2rem;}
+    .tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.04em;color:var(--green);background:var(--green-d);padding:.2rem .6rem;border-radius:2px;}
+
+    /* CONTACT — large colored social icons, reveal name on hover */
+    .contact-intro{font-size:1rem;color:var(--muted);font-weight:300;margin-bottom:2.5rem;max-width:460px;line-height:1.82;}
+    .socials{display:flex;flex-wrap:wrap;gap:1.25rem;margin-bottom:2.5rem;}
+    .social-icon-wrap{display:flex;flex-direction:column;align-items:center;gap:.45rem;text-decoration:none;border:none;cursor:pointer;width:72px;transition:transform .2s;}
+    .social-icon-wrap:hover{transform:translateY(-3px);}
+    .social-icon-wrap:hover .si-label{opacity:1;}
+    .si-box{width:58px;height:58px;border-radius:14px;display:flex;align-items:center;justify-content:center;}
+    .si-box svg{width:26px;height:26px;}
+    .si-label{font-family:var(--mono);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);opacity:0;transition:opacity .2s;}
+    /* Brand colours */
+    .si-email  {background:#2A2218;}
+    .si-email svg  {color:var(--amber);}
+    .si-bsky   {background:#0A1E3A;}
+    .si-bsky svg   {color:#4A9AE0;}
+    .si-github {background:#1A1A18;}
+    .si-github svg {color:#C8C8C0;}
+    .si-linkedin{background:#0A1A30;}
+    .si-linkedin svg{color:#4A80C0;}
+    .contact-note{padding:1.25rem;border-left:2px solid var(--amber-d);background:rgba(200,136,46,.04);}
+    .contact-note p{font-size:.88rem;color:var(--muted);line-height:1.75;}
+
+    /* MUSIC PLAYER */
+    #mplayer{position:fixed;bottom:1.5rem;right:var(--pad);z-index:200;display:flex;flex-direction:column;align-items:flex-end;gap:.45rem;}
+    .mp-toggle{background:rgba(13,12,9,.92);backdrop-filter:blur(12px);border:1px solid rgba(237,231,219,.12);color:var(--muted);font-family:var(--mono);font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;padding:.42rem .75rem;cursor:pointer;display:flex;align-items:center;gap:.4rem;transition:color .2s,border-color .2s;}
+    .mp-toggle:hover{color:var(--amber-g);border-color:var(--amber-d);}
+    .mp-dot{width:5px;height:5px;border-radius:50%;background:var(--faint);transition:background .3s;}
+    .mp-dot.on{background:var(--amber);animation:blink 1.5s ease-in-out infinite;}
+    @keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+    .mp-panel{background:rgba(13,12,9,.96);backdrop-filter:blur(16px);border:1px solid rgba(237,231,219,.1);width:300px;display:none;overflow:hidden;}
     .mp-panel.open{display:block;}
     .mp-tabs{display:flex;border-bottom:1px solid rgba(237,231,219,.08);}
     .mpt{flex:1;font-family:var(--mono);font-size:.47rem;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);padding:.5rem .2rem;cursor:pointer;text-align:center;border-bottom:1.5px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;white-space:nowrap;}
@@ -102,896 +141,174 @@
     .mp-pane{display:none;}
     .mp-pane.active{display:block;}
     .mp-pane iframe{display:block;}
-    /* Search bar */
-    .mp-search{padding:.6rem .7rem;border-bottom:1px solid rgba(237,231,219,.07);display:flex;gap:.4rem;}
-    .mp-search input{flex:1;background:rgba(237,231,219,.06);border:1px solid rgba(237,231,219,.12);color:var(--text);font-family:var(--mono);font-size:.58rem;padding:.35rem .55rem;outline:none;min-width:0;transition:border-color .2s;}
-    .mp-search input:focus{border-color:var(--amber-dim);}
+    .mp-search{padding:.55rem .65rem;border-bottom:1px solid rgba(237,231,219,.07);display:flex;gap:.4rem;}
+    .mp-search input{flex:1;background:rgba(237,231,219,.05);border:1px solid rgba(237,231,219,.1);color:var(--text);font-family:var(--mono);font-size:.56rem;padding:.32rem .5rem;outline:none;min-width:0;transition:border-color .2s;}
+    .mp-search input:focus{border-color:var(--amber-d);}
     .mp-search input::placeholder{color:var(--faint);}
-    .mp-search button{background:none;border:1px solid rgba(237,231,219,.14);color:var(--muted);font-family:var(--mono);font-size:.52rem;letter-spacing:.06em;text-transform:uppercase;padding:.35rem .6rem;cursor:pointer;white-space:nowrap;transition:color .2s,border-color .2s;flex-shrink:0;}
-    .mp-search button:hover{color:var(--amber);border-color:var(--amber-dim);}
-    .mp-note{padding:.5rem .7rem;font-size:.5rem;color:var(--faint);font-family:var(--mono);line-height:1.55;border-top:1px solid rgba(237,231,219,.06);}
+    .mp-search button{background:none;border:1px solid rgba(237,231,219,.12);color:var(--muted);font-family:var(--mono);font-size:.5rem;letter-spacing:.05em;padding:.32rem .55rem;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:color .2s,border-color .2s;}
+    .mp-search button:hover{color:var(--amber);border-color:var(--amber-d);}
+    .mp-note{padding:.5rem .65rem;font-size:.5rem;color:var(--faint);font-family:var(--mono);line-height:1.5;border-top:1px solid rgba(237,231,219,.06);}
 
-    /* Nav ID group + tagline */
-    .nav-id-group{display:flex;flex-direction:column;gap:.15rem;}
-    .nav-tagline{font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(237,231,219,.42);}
-    /* Burger button — hidden on desktop */
-    .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;z-index:101;}
-    .nav-burger span{display:block;width:22px;height:1.5px;background:var(--muted);transition:all .3s;}
-    .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
-    .nav-burger.open span:nth-child(2){opacity:0;}
-    .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-    /* First-visit nav hint */
-    @keyframes navHintPulse{0%,100%{box-shadow:0 0 0 0 rgba(217,140,48,0);}50%{box-shadow:0 0 0 10px rgba(217,140,48,.22);}}
-    .nav-burger.hint-pulse{border-radius:4px;animation:navHintPulse 1.1s ease-in-out 3;}
+    /* FOOTER */
+    footer{border-top:1px solid var(--border);padding:1.75rem var(--pad);max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;}
+    .footer-quote{font-family:var(--serif);font-style:italic;font-size:.82rem;font-weight:300;color:var(--faint);flex:1;max-width:380px;line-height:1.58;}
+    .footer-home{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);border:none;transition:color .2s;}
+    .footer-home:hover{color:var(--amber);border:none;}
+    .footer-home svg{width:12px;height:12px;}
 
-    @media(max-width:700px){
-      nav{padding:1rem 1.2rem;}
-      .nav-burger{display:flex;}
-      .nav-links{
-        display:none;position:fixed;top:0;left:0;right:0;bottom:0;
-        background:rgba(7,6,5,.97);backdrop-filter:blur(20px);
-        flex-direction:column;align-items:center;justify-content:center;
-        gap:2.5rem;z-index:100;
-      }
-      .nav-links.mobile-open{display:flex;}
-      .nav-links a{font-size:1rem;letter-spacing:.12em;}
-      .nav-links a svg{width:18px;height:18px;}
-      .bottom{padding:0 1.2rem 1.5rem;}
-      .quote-text{font-size:clamp(1rem,4.5vw,1.35rem);}
-      #mplayer{right:1rem;bottom:1rem;}
-      .mp-panel{width:calc(100vw - 2rem);max-width:320px;}
-      .controls{gap:.4rem;}
-      .prog-track{width:70px;}
-      .drawer{padding:1.5rem 1.2rem 2rem;}
-      .drawer-grid{grid-template-columns:1fr;}
-      .arr{padding:.22rem .4rem;font-size:.5rem;}
-    }
-    @media(max-width:400px){
-      .quote-text{font-size:1rem;}
-      .nav-tagline{display:none;}
-      .bottom{padding:0 1rem 1.2rem;}
-    }
+    @media(max-width:560px){.b-item{grid-template-columns:1fr;}.nav-quote{display:none;}.hero-strip{height:220px;}.mp-panel{width:268px;}}
+    /* ── PHOTO NAV ── */
+    .nav-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;border:1.5px solid var(--amber-d);flex-shrink:0;}
+    .nav-id-with-photo{display:flex;align-items:center;gap:.65rem;text-decoration:none;border:none;}
+    .nav-id-with-photo:hover{border:none;}
+    .nav-id-group{display:flex;align-items:center;}
   </style>
 </head>
 <body>
 
-<div class="slides" id="slides"></div>
-
-<nav>
-  <div class="nav-id-group">
-    <a href="index.html" class="nav-id">Martin Muchiri</a>
-    <span class="nav-tagline">AI accountability · African education · Nairobi</span>
-  </div>
-  <button class="nav-burger" id="navBurger" onclick="toggleNav()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>About</a></li>
-    <li><a href="research.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>Research</a></li>
-    <li><a href="blog.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Blog</a></li>
-    <li><a href="shelf.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>Shelf</a></li>
-    <li><a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Contact</a></li>
-  </ul>
-</nav>
-
-<div class="bottom">
-  <div class="quote-wrap" id="qWrap">
-    <div class="apod-tag" id="apodTag">✦ NASA · Astronomy Picture of the Day</div>
-    <p class="quote-text" id="qText"></p>
-    <p class="quote-attr" id="qAttr"></p>
-  </div>
-  <div class="bottom-bar">
-    <div class="species-wrap" id="spWrap">
-      <p class="species-name" id="spName"></p>
-      <p class="species-loc"  id="spLoc"></p>
-      <button class="learn-btn" id="learnBtn" onclick="openDrawer()">learn more ↑</button>
-    </div>
-    <div class="controls">
-      <span class="counter" id="counter">01 / —</span>
-      <div class="prog-track"><div class="prog-fill" id="fill" style="width:0%"></div></div>
-      <div class="arrows">
-        <button class="arr" id="prev">← prev</button>
-        <button class="arr" id="next">next →</button>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-home" aria-label="Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+      </a>
+      <div class="nav-id-group">
+        <a href="index.html" class="nav-id-with-photo">
+          <img src="assets/photo.jpg" alt="Martin Muchiri" class="nav-avatar" onerror="this.style.display='none'"/>
+          <div>
+            <span style="display:block;font-family:var(--serif);font-size:.92rem;color:var(--text);letter-spacing:.01em;">Martin Muchiri</span>
+            <span style="display:block;font-family:var(--mono);font-size:.55rem;letter-spacing:.07em;color:var(--muted);">AI accountability · African education </span>
+          </div>
+        </a>
       </div>
+      <p class="nav-quote" id="navQ"></p>
+      <ul class="nav-links">
+        <li><a href="about.html" class="current"><!-- CHANGE current PER PAGE -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>About</a></li>
+        <li><a href="research.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>Research</a></li>
+        <li><a href="blog.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Blog</a></li>
+        <li><a href="shelf.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>Shelf</a></li>
+        <li><a href="contact.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO STRIP — random wildlife image per page load -->
+  <div class="hero-strip" id="heroStrip">
+    <div class="hero-strip-text">
+      <p class="hero-eyebrow">About</p><!-- CHANGE PER PAGE -->
+      <h1 class="hero-h1">Who I am<br>and what I am doing</h1><!-- CHANGE PER PAGE -->
     </div>
   </div>
-</div>
 
-<!-- INFO DRAWER -->
-<div class="drawer" id="drawer">
-  <button class="drawer-close" onclick="closeDrawer()">close ✕</button>
-  <p class="drawer-title" id="dTitle"></p>
-  <p class="drawer-loc"   id="dLoc"></p>
-  <div class="drawer-grid" id="dGrid"></div>
-</div>
+  <!-- ════════════════════════════════════════
+       PAGE CONTENT — replace per page
+  ════════════════════════════════════════ -->
+  <main>
+    <div class="wrap">
 
-<!-- MUSIC PLAYER — Spotify only -->
-<div id="mplayer">
-  <div class="mp-panel" id="mpPanel">
-    <div class="mp-tabs">
-      <div class="mpt active" onclick="swMp(this,'piano')">Piano</div>
-      <div class="mpt" onclick="swMp(this,'africa')">Africa</div>
-      <div class="mpt" onclick="swMp(this,'focus')">Focus</div>
-      <div class="mpt" onclick="swMp(this,'ambient')">Ambient</div>
+      <div class="section">
+        <div class="prose">
+          <p>Working on it. To be added soon.</p>
+          <p class="pull"></p>
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+
+
+
     </div>
-    <!-- Search bar — opens Spotify search in new tab -->
-    <div class="mp-search">
-      <input type="text" id="spSearch" placeholder="Search Spotify…" onkeydown="if(event.key==='Enter')doSearch()"/>
-      <button onclick="doSearch()">↗ search</button>
+  </main>
+  <!-- ════════════════════════════════════════
+       END PAGE CONTENT
+  ════════════════════════════════════════ -->
+
+  <!-- MUSIC PLAYER -->
+  <div id="mplayer">
+    <div class="mp-panel" id="mpPanel">
+      <div class="mp-tabs">
+        <div class="mpt active" onclick="swMp(this,'piano')">Piano</div>
+        <div class="mpt" onclick="swMp(this,'africa')">Africa</div>
+        <div class="mpt" onclick="swMp(this,'focus')">Focus</div>
+        <div class="mpt" onclick="swMp(this,'ambient')">Ambient</div>
+      </div>
+      <div class="mp-search">
+        <input type="text" id="spSearch" placeholder="Search Spotify…" onkeydown="if(event.key==='Enter')doSearch()"/>
+        <button onclick="doSearch()">↗ search</button>
+      </div>
+      <div class="mp-pane active" id="mp-piano"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3Ogo9pFvBkY?utm_source=generator&theme=0" width="300" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe></div>
+      <div class="mp-pane" id="mp-africa"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8bXByKnhSmh?utm_source=generator&theme=0" width="300" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe></div>
+      <div class="mp-pane" id="mp-focus"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWZeKCadgRdKQ?utm_source=generator&theme=0" width="300" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe></div>
+      <div class="mp-pane" id="mp-ambient"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX889U0CL85jj?utm_source=generator&theme=0" width="300" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe></div>
+      <p class="mp-note">Pause before switching tabs. Spotify: full playback · Others: 30-sec previews.</p>
     </div>
-    <!-- Peaceful Piano -->
-    <div class="mp-pane active" id="mp-piano">
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3Ogo9pFvBkY?utm_source=generator&theme=0" width="310" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe>
-    </div>
-    <!-- African Heat — confirmed working Spotify playlist -->
-    <div class="mp-pane" id="mp-africa">
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8bXByKnhSmh?utm_source=generator&theme=0" width="310" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe>
-    </div>
-    <!-- Deep Focus -->
-    <div class="mp-pane" id="mp-focus">
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWZeKCadgRdKQ?utm_source=generator&theme=0" width="310" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe>
-    </div>
-    <!-- Ambient Chill -->
-    <div class="mp-pane" id="mp-ambient">
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX889U0CL85jj?utm_source=generator&theme=0" width="310" height="152" frameBorder="0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe>
-    </div>
-    <p class="mp-note">Pause before switching tabs. Spotify: full playback · Others: 30-sec previews.</p>
+    <button class="mp-toggle" onclick="toggleMp()"><span class="mp-dot" id="mpDot"></span>listen</button>
   </div>
-  <button class="mp-toggle" onclick="toggleMp()"><span class="mp-dot" id="mpDot"></span>listen</button>
-</div>
 
-<script>
-/* ═══════════════════════════════════════════════════════
-   UNSPLASH API
-   Paste your Access Key (NOT Secret Key) below.
-   Get it free: unsplash.com/developers → New Application
-   The Access Key is safe to use client-side.
-═══════════════════════════════════════════════════════ */
-const UNSPLASH_KEY = 'sgPN2TYKB9CNWvySWEmb7Rx9fnnxSEyUiW_vMPi6baM';
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-quote" id="footerQ"></p>
+    <a href="index.html" class="footer-home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>home
+    </a>
+  </footer>
 
-/* ═══════════════════════════════════════════════════════
-   NASA APOD — get your free key: api.nasa.gov
-   Replace DEMO_KEY — DEMO_KEY is rate-limited on public sites
-═══════════════════════════════════════════════════════ */
-const NASA_KEY = ' OlNNHhk3s5zIsgAxpc5TH8xI9blwswMXlZPGhhBL ';
+  <script>
+  /* HERO STRIP IMAGE */
+  const heroImgs = [
+    'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1400&q=80',
+    'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1400&q=80',
+    'https://images.unsplash.com/photo-1581852017103-68ac65514cf7?auto=format&fit=crop&w=1400&q=80',
+    'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1400&q=80',
+    'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1400&q=80',
+    'https://images.unsplash.com/photo-1535941339077-2dd1c7963098?auto=format&fit=crop&w=1400&q=80',
+    'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1400&q=80',
+  ];
+  document.getElementById('heroStrip').style.backgroundImage =
+    "url('" + heroImgs[Math.floor(Math.random() * heroImgs.length)] + "')";
 
-/* ═══════════════════════════════════════════════════════
-   QUOTES — curated voices only
-═══════════════════════════════════════════════════════ */
-const QUOTES = [
+  /* QUOTES */
+  const QUOTES = [
+    {t:"Each generation must discover its mission, fulfil it or betray it.",a:"Frantz Fanon"},
+    {t:"If you have some power, then your job is to empower somebody else.",a:"Toni Morrison"},
+    {t:"I am because we are.",a:"Ubuntu philosophy"},
+    {t:"Until the lion learns to write, every story will glorify the hunter.",a:"Chinua Achebe"},
+    {t:"The purpose of development is the human being.",a:"Julius Nyerere"},
+    {t:"I refuse to be hanged as a criminal. I am a freedom fighter.",a:"Dedan Kimathi"},
+    {t:"The opposite of poverty is not wealth. The opposite of poverty is justice.",a:"Bryan Stevenson"},
+    {t:"Your silence will not protect you.",a:"Audre Lorde"},
+    {t:"Conservation cannot be separated from communities that have always lived alongside wildlife.",a:"Mordecai Ogada"},
+    {t:"Indigenous data sovereignty is not a request. It is a right.",a:"Keolu Fox"},
+    {t:"A child who is not embraced by the village will burn it down to feel its warmth.",a:"African proverb"},
+    {t:"Knowledge is like a garden: if it is not cultivated, it cannot be harvested.",a:"African proverb"},
+  ];
+  const q = QUOTES[new Date().getHours() % QUOTES.length];
+  const nq = document.getElementById('navQ');
+  if(nq) nq.textContent = '\u201c' + q.t + '\u201d';
+  const fq = document.getElementById('footerQ');
+  if(fq) fq.textContent = '\u201c' + q.t + '\u201d \u2014 ' + q.a;
 
-  // TONI MORRISON
-  { t: "If you have some power, then your job is to empower somebody else.", a: "Toni Morrison" },
-  { t: "The function of freedom is to free someone else.", a: "Toni Morrison" },
-  { t: "To name a thing is to begin to know it.", a: "Toni Morrison" },
-  { t: "If you can only be tall because someone else is on their knees, then you have a serious problem.", a: "Toni Morrison" },
-  { t: "You wanna fly, you got to give up the shit that weighs you down.", a: "Toni Morrison" },
-  { t: "No matter what they tell us or don't tell us, we know. We know the difference between the hand that helps and the hand that does not.", a: "Toni Morrison" },
-  { t: "The very serious function of racism is distraction. It keeps you from doing your work.", a: "Toni Morrison" },
-  { t: "We die. That may be the meaning of life. But we do language. That may be the measure of our lives.", a: "Toni Morrison" },
-
-  // FRANTZ FANON
-  { t: "Each generation must, out of relative obscurity, discover its mission, fulfil it or betray it.", a: "Frantz Fanon" },
-  { t: "The colonised man will first manifest this aggressiveness which has been deposited in his bones against his own people.", a: "Frantz Fanon" },
-  { t: "Leave this Europe where they are never done talking of Man, yet murder men everywhere they find them.", a: "Frantz Fanon" },
-  { t: "For the colonised people, the most essential value, because the most concrete, is first and foremost the land.", a: "Frantz Fanon" },
-  { t: "Colonialism is not a thinking machine, nor a body endowed with reasoning faculties. It is violence in its natural state.", a: "Frantz Fanon" },
-  { t: "The native is an oppressed person whose permanent dream is to become the persecutor.", a: "Frantz Fanon" },
-
-  // NGUGI WA THIONG'O
-  { t: "Africa is not rising. Africa is awake.", a: "Ngugi wa Thiong'o" },
-  { t: "Language carries culture, and culture carries the entire body of values by which we come to perceive ourselves and our place in the world.", a: "Ngugi wa Thiong'o" },
-  { t: "The language of African literature cannot be discussed meaningfully outside the context of those power relations between European and African languages.", a: "Ngugi wa Thiong'o" },
-  { t: "To control a people you must first control what they think about themselves and how they regard their history and culture.", a: "Ngugi wa Thiong'o" },
-  { t: "The biggest weapon wielded and actually daily unleashed against the African people is the cultural bomb.", a: "Ngugi wa Thiong'o" },
-
-  // CHINUA ACHEBE
-  { t: "Until the lion learns to write, every story will glorify the hunter.", a: "Chinua Achebe" },
-  { t: "A man who calls his kinsmen to a feast does not do so to save them from starving. They all have food in their own homes. When we gather together in the moonlit village ground it is not because of the moon. Every man can see it in his own compound. We come together because it is good for kinsmen to do so.", a: "Chinua Achebe" },
-  { t: "The white man is very clever. He came quietly and peaceably with his religion. We were amused at his foolishness and allowed him to stay. Now he has won our brothers, and our clan can no longer act like one.", a: "Chinua Achebe" },
-  { t: "When suffering knocks at your door and you say there is no seat left for him, he tells you not to worry because he has brought his own stool.", a: "Chinua Achebe" },
-  { t: "We cannot trample upon the humanity of others without devaluing our own.", a: "Chinua Achebe" },
-
-  // WOLE SOYINKA
-  { t: "A tiger does not proclaim its tigritude, it pounces.", a: "Wole Soyinka" },
-  { t: "Writers are often the most honest persons a nation has.", a: "Wole Soyinka" },
-  { t: "The man dies in all who keep silent in the face of tyranny.", a: "Wole Soyinka" },
-  { t: "I have one abiding religion — human liberty.", a: "Wole Soyinka" },
-  { t: "Battles, confrontations: these are the heritage and commitment of the creative mind.", a: "Wole Soyinka" },
-
-  // JOHN MBITI
-  { t: "I am because we are, and since we are, therefore I am.", a: "John Mbiti" },
-  { t: "The individual can only say 'I am' because of the community in which he lives.", a: "John Mbiti" },
-  { t: "Time is a two-dimensional phenomenon, with a long past, a present and virtually no future.", a: "John Mbiti" },
-
-  // JULIUS NYERERE
-  { t: "The purpose of development is the human being.", a: "Julius Nyerere" },
-  { t: "We, in Africa, have no more need of being converted to socialism than we have of being taught democracy.", a: "Julius Nyerere" },
-  { t: "In order to maintain our independence and our people's freedom, we ought to be very careful to tell the world what we are, what we intend to do and how we intend to do it.", a: "Julius Nyerere" },
-  { t: "Without unity, there is no future for Africa.", a: "Julius Nyerere" },
-
-  // KWAME NKRUMAH
-  { t: "I am not African because I was born in Africa, but because Africa was born in me.", a: "Kwame Nkrumah" },
-  { t: "We face neither East nor West; we face forward.", a: "Kwame Nkrumah" },
-  { t: "Action without thought is empty. Thought without action is blind.", a: "Kwame Nkrumah" },
-  { t: "The independence of Ghana is meaningless unless it is linked up with the total liberation of Africa.", a: "Kwame Nkrumah" },
-
-  // DEDAN KIMATHI
-  { t: "I refuse to be hanged as a criminal. I am a freedom fighter.", a: "Dedan Kimathi" },
-  { t: "It is better to die on our feet than to live on our knees.", a: "Dedan Kimathi" },
-
-  // TOM MBOYA
-  { t: "Our task is not to create the Africa of yesterday but the Africa of tomorrow.", a: "Tom Mboya" },
-  { t: "The future of Africa must be built on the mental and physical freedom of her people.", a: "Tom Mboya" },
-
-  // OLÚFẸ́MI O. TÁÍWÒ
-  { t: "Elite capture is the process by which the advantaged few steer resources, narratives, and policy toward their own interests.", a: "Olúfẹ́mi O. Táíwò" },
-  { t: "Being in the room is not enough. The question is who gets to decide what the room decides.", a: "Olúfẹ́mi O. Táíwò" },
-  { t: "The world that colonialism built still shapes who gains and who loses. Repair requires acknowledging that.", a: "Olúfẹ́mi O. Táíwò" },
-
-  // TIMNIT GEBRU
-  { t: "The moment we centre the most marginalised, we design better systems for everyone.", a: "Timnit Gebru" },
-  { t: "AI ethics without structural accountability is just reputation management.", a: "Timnit Gebru" },
-  { t: "You cannot build an ethical AI system without asking: who is it for, and who does it harm?", a: "Timnit Gebru" },
-
-  // WANDIA NJOYA
-  { t: "You cannot decolonise the mind with colonial tools.", a: "Wandia Njoya" },
-  { t: "The CBC does not reform education. It completes the colonial project of producing workers, not thinkers.", a: "Wandia Njoya" },
-  { t: "African children deserve knowledge, not just skills for someone else's economy.", a: "Wandia Njoya" },
-
-  // MORDECAI OGADA
-  { t: "Conservation cannot be separated from the communities that have always lived alongside wildlife.", a: "Mordecai Ogada" },
-  { t: "The African conservation narrative has been written by those who came to Africa to save it from Africans.", a: "Mordecai Ogada" },
-  { t: "When Africans are absent from the rooms where decisions about Africa are made, those decisions serve everyone except Africans.", a: "Mordecai Ogada" },
-
-  // KEOLU FOX
-  { t: "Indigenous data sovereignty is not a request. It is a right.", a: "Keolu Fox" },
-  { t: "You cannot build technology that serves indigenous people without indigenous people building it.", a: "Keolu Fox" },
-  { t: "The genomic data of indigenous communities is not raw material for someone else's discovery.", a: "Keolu Fox" },
-
-  // MALCOLM X
-  { t: "Education is the passport to the future, for tomorrow belongs to those who prepare for it today.", a: "Malcolm X" },
-  { t: "You can't separate peace from freedom because no one can be at peace unless he has his freedom.", a: "Malcolm X" },
-  { t: "I believe in human beings, and that all human beings should be respected as such, regardless of their colour.", a: "Malcolm X" },
-  { t: "If you have no critics you'll likely have no success.", a: "Malcolm X" },
-  { t: "The future belongs to those who prepare for it today.", a: "Malcolm X" },
-
-  // JAMES BALDWIN
-  { t: "Not everything that is faced can be changed, but nothing can be changed until it is faced.", a: "James Baldwin" },
-  { t: "The most dangerous creation of any society is the man who has nothing to lose.", a: "James Baldwin" },
-  { t: "To be Black and conscious in America is to be in a constant state of rage.", a: "James Baldwin" },
-  { t: "Children have never been very good at listening to their elders, but they have never failed to imitate them.", a: "James Baldwin" },
-  { t: "Not everything that is faced can be changed. But nothing can be changed that is not faced.", a: "James Baldwin" },
-  { t: "I am what time, circumstance, history, have made of me, certainly, but I am also much more than that. So are we all.", a: "James Baldwin" },
-  { t: "The world is before you, and you need not take it or leave it as it was when you came in.", a: "James Baldwin" },
-
-  // WANGARI MAATHAI
-  { t: "In the course of history, there comes a time when humanity is called to shift to a new level of consciousness.", a: "Wangari Maathai" },
-  { t: "It's the little things citizens do. That's what will make the difference. My little thing is planting trees.", a: "Wangari Maathai" },
-  { t: "The generation that destroys the environment is not the generation that pays the price. That is the problem.", a: "Wangari Maathai" },
-  { t: "Until you dig a hole, you plant a tree, you water it and make it survive, you haven't done a thing. You are just talking.", a: "Wangari Maathai" },
-  { t: "In Kenya, women are the first victims of environmental degradation, because they are the ones who walk for hours looking for water.", a: "Wangari Maathai" },
-  { t: "African women in general need to know that it's okay for them to be the way they are — to see the way they are as a strength, and to be liberated from fear and from silence.", a: "Wangari Maathai" },
-
-  // PATRICE LUMUMBA
-  { t: "We are not alone. Africa, Asia, and the free and liberated peoples from every corner of the world will always be found at the side of millions of Congolese.", a: "Patrice Lumumba" },
-  { t: "The day will come when history will speak. But it will not be the history taught in Brussels, Paris, Washington or the United Nations.", a: "Patrice Lumumba" },
-  { t: "We are going to show the world what the black man can do when he works in freedom.", a: "Patrice Lumumba" },
-  { t: "No Congolese worthy of the name will ever be able to forget that independence was won in struggle, a persevering and inspired struggle carried on from day to day.", a: "Patrice Lumumba" },
-
-  // CHE GUEVARA
-  { t: "Until victory, always.", a: "Ernesto 'Che' Guevara" },
-  { t: "The revolution is not an apple that falls when it is ripe. You have to make it fall.", a: "Ernesto 'Che' Guevara" },
-  { t: "Let the world change you and you can change the world.", a: "Ernesto 'Che' Guevara" },
-  { t: "Be realistic, demand the impossible.", a: "Ernesto 'Che' Guevara" },
-
-  // MARTIN LUTHER KING JR.
-  { t: "Injustice anywhere is a threat to justice everywhere.", a: "Martin Luther King Jr." },
-  { t: "Our lives begin to end the day we become silent about things that matter.", a: "Martin Luther King Jr." },
-  { t: "The arc of the moral universe is long, but it bends toward justice.", a: "Martin Luther King Jr." },
-  { t: "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.", a: "Martin Luther King Jr." },
-  { t: "In the end, we will remember not the words of our enemies, but the silence of our friends.", a: "Martin Luther King Jr." },
-  { t: "A nation that continues year after year to spend more money on military defense than on programs of social uplift is approaching spiritual death.", a: "Martin Luther King Jr." },
-  { t: "Intelligence plus character — that is the goal of true education.", a: "Martin Luther King Jr." },
-
-  // ALICE WALKER
-  { t: "The most common way people give up their power is by thinking they don't have any.", a: "Alice Walker" },
-  { t: "No person is your friend who demands your silence, or denies your right to grow.", a: "Alice Walker" },
-  { t: "Activism is the rent I pay for living on this planet.", a: "Alice Walker" },
-
-  // MARTIN LUTHER KING JR.
-  { t: "The function of education is to teach one to think intensively and to think critically. Intelligence plus character — that is the goal of true education.", a: "Martin Luther King Jr." },
-  { t: "Injustice anywhere is a threat to justice everywhere.", a: "Martin Luther King Jr." },
-  { t: "We must learn to live together as brothers or perish together as fools.", a: "Martin Luther King Jr." },
-  { t: "The arc of the moral universe is long, but it bends toward justice.", a: "Martin Luther King Jr." },
-
-  // BRYAN STEVENSON
-  { t: "The opposite of poverty is not wealth. The opposite of poverty is justice.", a: "Bryan Stevenson" },
-  { t: "We are all implicated when we allow other people to be mistreated.", a: "Bryan Stevenson" },
-  { t: "Each of us is more than the worst thing we've ever done.", a: "Bryan Stevenson" },
-
-  // MAYA ANGELOU
-  { t: "There is no greater agony than bearing an untold story inside you.", a: "Maya Angelou" },
-  { t: "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.", a: "Maya Angelou" },
-  { t: "You may not control all the events that happen to you, but you can decide not to be reduced by them.", a: "Maya Angelou" },
-  { t: "We delight in the beauty of the butterfly, but rarely admit the changes it has gone through to achieve that beauty.", a: "Maya Angelou" },
-
-  // AUDRE LORDE
-  { t: "Your silence will not protect you.", a: "Audre Lorde" },
-  { t: "It is not our differences that divide us. It is our inability to recognise, accept, and celebrate those differences.", a: "Audre Lorde" },
-  { t: "I am not free while any woman is unfree, even when her shackles are very different from my own.", a: "Audre Lorde" },
-  { t: "Poetry is not a luxury. It is a vital necessity of our existence.", a: "Audre Lorde" },
-  { t: "When I dare to be powerful — to use my strength in the service of my vision, then it becomes less and less important whether I am afraid.", a: "Audre Lorde" },
-
-  // TSITSI DANGAREMBGA
-  { t: "The oppressor is always afraid of the oppressed.", a: "Tsitsi Dangarembga" },
-  { t: "It is not easy to write about what you love most when that love has been so thoroughly damaged.", a: "Tsitsi Dangarembga" },
-  { t: "We are the inheritors of a system that was not designed for our flourishing.", a: "Tsitsi Dangarembga" },
-
-  // NOVIOLET BULAWAYO
-  { t: "We are all immigrants from the future. We did not choose our time of arrival.", a: "NoViolet Bulawayo" },
-  { t: "We left because the country was no longer a country but a company where the president was also the owner.", a: "NoViolet Bulawayo" },
-
-  // JAMAICA KINCAID
-  { t: "I come from a place that was created by the powerful for the powerless.", a: "Jamaica Kincaid" },
-  { t: "No tourist wishes to go to a place that has too much of a real history.", a: "Jamaica Kincaid" },
-  { t: "A tourist is an ugly human being.", a: "Jamaica Kincaid" },
-
-  // JEAN RHYS
-  { t: "There is always another side, always.", a: "Jean Rhys" },
-  { t: "I have no country, no nationality. I have only the need to write.", a: "Jean Rhys" },
-
-  // ABDULRAZAK GURNAH
-  { t: "Memory is not static. It swells and recedes like the tide.", a: "Abdulrazak Gurnah" },
-  { t: "The past is not dead. It is not even past.", a: "Abdulrazak Gurnah" },
-  { t: "Migration is not an aberration. It is a human constant.", a: "Abdulrazak Gurnah" },
-
-  // GABRIEL GARCÍA MÁRQUEZ
-  { t: "A person doesn't die when he should but when he can.", a: "Gabriel García Márquez" },
-  { t: "Tell him that a person doesn't die when he should but when he can.", a: "Gabriel García Márquez" },
-  { t: "The secret of a good old age is simply an honourable pact with solitude.", a: "Gabriel García Márquez" },
-  { t: "Nobody teaches life anything.", a: "Gabriel García Márquez" },
-
-  // LEILA ABOULELA
-  { t: "Home is not a place. It is the people who know your name.", a: "Leila Aboulela" },
-  { t: "Faith is not the absence of doubt. It is the courage to go forward despite it.", a: "Leila Aboulela" },
-
-  // AMINATTA FORNA
-  { t: "What we call post-traumatic stress disorder, many cultures simply call memory.", a: "Aminatta Forna" },
-  { t: "In Africa we don't pathologise the past. We live in it.", a: "Aminatta Forna" },
-
-  // ALAN PATON
-  { t: "I have one great fear in my heart, that one day when they are turned to loving, they will find we are turned to hating.", a: "Alan Paton" },
-  { t: "There is a lovely road that runs from Ixopo into the hills. These hills are grass-covered and rolling, and they are lovely beyond any singing of it.", a: "Alan Paton" },
-
-  // CLAUDE McKAY
-  { t: "If we must die — let it not be like hogs hunted and penned in an inglorious spot.", a: "Claude McKay" },
-  { t: "Though far outnumbered let us show us brave, and for their thousand blows deal one deathblow.", a: "Claude McKay" },
-
-  // MARLON JAMES
-  { t: "History is what people want to forget.", a: "Marlon James" },
-  { t: "Truth has a way of demanding to be known even when those in power would rather it didn't.", a: "Marlon James" },
-
-  // HELEN KELLER
-  { t: "The only thing worse than being blind is having sight but no vision.", a: "Helen Keller" },
-  { t: "Alone we can do so little; together we can do so much.", a: "Helen Keller" },
-  { t: "Security is mostly a superstition. Life is either a daring adventure or nothing.", a: "Helen Keller" },
-
-  // UBUNTU / AFRICAN PROVERBS
-  { t: "A person is a person through other persons.", a: "Ubuntu philosophy" },
-  { t: "I am because we are.", a: "Ubuntu philosophy" },
-  { t: "A child who is not embraced by the village will burn it down to feel its warmth.", a: "African proverb" },
-  { t: "Until the last tree is cut and the last river poisoned, you will realise you cannot eat money.", a: "Cree proverb" },
-  { t: "Knowledge is like a garden: if it is not cultivated, it cannot be harvested.", a: "African proverb" },
-  { t: "The axe forgets, but the tree remembers.", a: "African proverb" },
-  { t: "He who learns, teaches.", a: "Ethiopian proverb" },
-  { t: "A tree that grows in the shade of another will die small.", a: "Tanzanian proverb" },
-  { t: "When elephants fight, it is the grass that suffers.", a: "East African proverb" },
-  { t: "Not to know is bad; not to want to know is worse.", a: "African proverb" },
-  { t: "You do not teach the paths of the forest to an old gorilla.", a: "Congolese proverb" },
-  { t: "The forest would be silent if no bird sang except the one that sang best.", a: "African proverb" },
-  { t: "Rain does not fall on one roof alone.", a: "Cameroonian proverb" },
-  { t: "A child who asks questions will not become a fool.", a: "African proverb" },
-
-  // HOPI / INDIGENOUS / PACIFIC
-  { t: "The one who tells the stories rules the world.", a: "Hopi proverb" },
-  { t: "We are the ones we have been waiting for.", a: "Hopi proverb" },
-  { t: "We do not inherit the earth from our ancestors; we borrow it from our children.", a: "Indigenous proverb" },
-  { t: "Take only what you need and leave the land as you found it.", a: "Arapaho teaching" },
-  { t: "When you are in doubt, don't.", a: "Māori teaching" },
-
-  // ANGELA DAVIS
-  { t: "I am no longer accepting the things I cannot change. I am changing the things I cannot accept.", a: "Angela Davis" },
-  { t: "Prisons do not disappear problems, they disappear human beings.", a: "Angela Davis" },
-  { t: "Radical simply means grasping things at the root.", a: "Angela Davis" },
-
-  // BELL HOOKS
-  { t: "The moment we choose to love we begin to move against domination, against oppression.", a: "bell hooks" },
-  { t: "There can be no love without justice.", a: "bell hooks" },
-  { t: "If any female feels she need anything beyond herself to legitimate and validate her existence, she is already giving away her power to be self-defining.", a: "bell hooks" },
-
-  // JAMES BALDWIN
-  { t: "Not everything that is faced can be changed, but nothing can be changed until it is faced.", a: "James Baldwin" },
-  { t: "The price of the liberation of the white people is the liberation of the Black people.", a: "James Baldwin" },
-  { t: "You think your pain and your heartbreak are unprecedented in the history of the world, but then you read.", a: "James Baldwin" },
-  { t: "I love America more than any other country in the world and, exactly for this reason, I insist on the right to criticise her perpetually.", a: "James Baldwin" },
-
-  // NELSON MANDELA
-  { t: "Education is the most powerful weapon which you can use to change the world.", a: "Nelson Mandela" },
-  { t: "It always seems impossible until it is done.", a: "Nelson Mandela" },
-  { t: "The greatest glory in living lies not in never falling, but in rising every time we fall.", a: "Nelson Mandela" },
-
-  // DESMOND TUTU
-  { t: "My humanity is bound up in yours, for we can only be human together.", a: "Desmond Tutu" },
-  { t: "Do your little bit of good where you are; it is those little bits of good put together that overwhelm the world.", a: "Desmond Tutu" },
-
-  // ADDITIONAL AFRICAN WOMEN VOICES
-  { t: "Silence is not the absence of something but the presence of everything.", a: "Ama Ata Aidoo" },
-  { t: "The African woman is not a problem to be solved. She is a power to be reckoned with.", a: "Chimamanda Ngozi Adichie" },
-  { t: "The problem with gender is that it prescribes how we should be rather than recognising how we are.", a: "Chimamanda Ngozi Adichie" },
-  { t: "We should all be feminists.", a: "Chimamanda Ngozi Adichie" },
-  { t: "Culture does not make people. People make culture.", a: "Chimamanda Ngozi Adichie" },
-
-  // CONTEMPORARY AFRICAN VOICES
-  { t: "If you don't design your own life plan, chances are you'll fall into someone else's plan.", a: "Strive Masiyiwa" },
-  { t: "Africa's greatest resource is not mineral wealth. It is human potential.", a: "Strive Masiyiwa" },
-
-  // ROLANDO HINOJOSA / CARIBBEAN
-  { t: "We are not afraid of ruins. We who plowed the prairies and built the cities can build again.", a: "Emma Lazarus" },
-  { t: "The land is the only thing that matters because it is the only thing that lasts.", a: "Caribbean proverb" },
-
-  // ABEBA BIRHANE
-  { t: "A system built on individualist assumptions will fail communities built on relational ones.", a: "Abeba Birhane" },
-  { t: "Algorithmic systems do not import objectivity. They import the assumptions of those who built them.", a: "Abeba Birhane" },
-  { t: "Ubuntu says: a person is a person through other persons. AI built on Descartes cannot serve Ubuntu communities.", a: "Abeba Birhane" },
-  
-  {t:"Each generation must discover its mission, fulfil it or betray it.",a:"Frantz Fanon"},
-  {t:"If you have some power, then your job is to empower somebody else.",a:"Toni Morrison"},
-  {t:"The function of freedom is to free someone else.",a:"Toni Morrison"},
-  {t:"The very serious function of racism is distraction. It keeps you from doing your work.",a:"Toni Morrison"},
-  {t:"We die. That may be the meaning of life. But we do language. That may be the measure of our lives.",a:"Toni Morrison"},
-  {t:"I am not African because I was born in Africa, but because Africa was born in me.",a:"Kwame Nkrumah"},
-  {t:"We face neither East nor West; we face forward.",a:"Kwame Nkrumah"},
-  {t:"Until the lion learns to write, every story will glorify the hunter.",a:"Chinua Achebe"},
-  {t:"We cannot trample upon the humanity of others without devaluing our own.",a:"Chinua Achebe"},
-  {t:"A tiger does not proclaim its tigritude, it pounces.",a:"Wole Soyinka"},
-  {t:"The man dies in all who keep silent in the face of tyranny.",a:"Wole Soyinka"},
-  {t:"I am because we are, and since we are, therefore I am.",a:"John Mbiti"},
-  {t:"The purpose of development is the human being.",a:"Julius Nyerere"},
-  {t:"I refuse to be hanged as a criminal. I am a freedom fighter.",a:"Dedan Kimathi"},
-  {t:"Elite capture is the process by which the advantaged few steer resources and narratives toward their own interests.",a:"Olúfẹ́mi O. Táíwò"},
-  {t:"You cannot decolonise the mind with colonial tools.",a:"Wandia Njoya"},
-  {t:"African children deserve knowledge, not just skills for someone else's economy.",a:"Wandia Njoya"},
-  {t:"Conservation cannot be separated from the communities that have always lived alongside wildlife.",a:"Mordecai Ogada"},
-  {t:"Indigenous data sovereignty is not a request. It is a right.",a:"Keolu Fox"},
-  {t:"The most common way people give up their power is by thinking they don't have any.",a:"Alice Walker"},
-  {t:"No person is your friend who demands your silence, or denies your right to grow.",a:"Alice Walker"},
-  {t:"Your silence will not protect you.",a:"Audre Lorde"},
-  {t:"It is not our differences that divide us. It is our inability to recognise, accept, and celebrate those differences.",a:"Audre Lorde"},
-  {t:"The opposite of poverty is not wealth. The opposite of poverty is justice.",a:"Bryan Stevenson"},
-  {t:"Education is the most powerful weapon which you can use to change the world.",a:"Nelson Mandela"},
-  {t:"My humanity is bound up in yours, for we can only be human together.",a:"Desmond Tutu"},
-  {t:"Not everything that is faced can be changed, but nothing can be changed until it is faced.",a:"James Baldwin"},
-  {t:"There is no greater agony than bearing an untold story inside you.",a:"Maya Angelou"},
-  {t:"The problem with gender is that it prescribes how we should be rather than recognising how we are.",a:"Chimamanda Ngozi Adichie"},
-  {t:"Culture does not make people. People make culture.",a:"Chimamanda Ngozi Adichie"},
-  {t:"Algorithmic systems do not import objectivity. They import the assumptions of those who built them.",a:"Abeba Birhane"},
-  {t:"A system built on individualist assumptions will fail communities built on relational ones.",a:"Abeba Birhane"},
-  {t:"I have one great fear in my heart, that one day when they are turned to loving, they will find we are turned to hating.",a:"Alan Paton"},
-  {t:"Memory is not static. It swells and recedes like the tide.",a:"Abdulrazak Gurnah"},
-  {t:"There is always another side, always.",a:"Jean Rhys"},
-  {t:"A child who is not embraced by the village will burn it down to feel its warmth.",a:"African proverb"},
-  {t:"Knowledge is like a garden: if it is not cultivated, it cannot be harvested.",a:"African proverb"},
-  {t:"When elephants fight, it is the grass that suffers.",a:"East African proverb"},
-  {t:"He who learns, teaches.",a:"Ethiopian proverb"},
-  {t:"The one who tells the stories rules the world.",a:"Hopi proverb"},
-  {t:"We do not inherit the earth from our ancestors; we borrow it from our children.",a:"Indigenous proverb"},
-  {t:"I am no longer accepting the things I cannot change. I am changing the things I cannot accept.",a:"Angela Davis"},
-  {t:"Radical simply means grasping things at the root.",a:"Angela Davis"},
-  {t:"There can be no love without justice.",a:"bell hooks"},
-  {t:"If you don't design your own life plan, chances are you'll fall into someone else's plan.",a:"Strive Masiyiwa"},
-  {t:"Africa is not rising. Africa is awake.",a:"Ngugi wa Thiong'o"},
-  {t:"Language carries culture, and culture carries the entire body of values by which we come to perceive ourselves.",a:"Ngugi wa Thiong'o"},
-];
-
-/* ═══════════════════════════════════════════════════════
-   STATIC WILDLIFE SLIDES — confirmed Unsplash URLs
-   with full Did You Know info
-═══════════════════════════════════════════════════════ */
-const STATIC_SLIDES = [
-  {
-    img:'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1920&q=80',
-    name:'Vachellia tortilis · Umbrella Acacia',loc:'Maasai Mara, Kenya',
-    info:{
-      classification:'Kingdom: Plantae · Family: Fabaceae · Genus: Vachellia · Species: V. tortilis',
-      description:'The umbrella acacia defines the East African savanna silhouette. Its deep taproot reaches 35 metres underground during 18-month dry spells — one of nature\'s most efficient drought-survival adaptations.',
-      habitat:'Semi-arid savanna and alkaline soils of East Africa. Found from Senegal to Somalia and south to South Africa.',
-      facts:['Giraffes are its primary browser — their 45cm tongue defeats even its longest thorns.','Maasai communities use the bark to treat malaria, and the roots to purify drinking water.','Seed pods sustain elephants, impalas, and over 40 insect species during dry season when nothing else grows.','Can live over 200 years. Some specimens in northern Kenya are estimated at 300.','Its flat crown is not coincidence — it maximises photosynthesis while minimising heat absorption from direct equatorial sun.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1920&q=80',
-    name:'Phoeniconaias minor · Lesser Flamingo',loc:'Lake Nakuru, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Aves · Family: Phoenicopteridae · Species: P. minor',
-      description:'The most numerous flamingo species — and one of nature\'s most spectacular aggregations. At Lake Nakuru and Bogoria, up to two million birds have turned entire shorelines into living, breathing pink landscapes.',
-      habitat:'Highly alkaline soda lakes of the East African Rift Valley. pH above 10 — water that would dissolve human skin.',
-      facts:['Feeds exclusively on cyanobacteria filtered through a specialised upside-down bill. No other vertebrate exploits this food source in these quantities.','Pink-to-crimson colour comes entirely from carotenoid pigments in the algae they eat. Deprive them of it and they turn white.','Chicks are born grey. Parents feed them crimson crop milk for the first two months.','Listed as Near Threatened — drainage of soda lakes for agriculture is reducing breeding habitat.','The Rift Valley soda lakes are among Earth\'s most productive ecosystems precisely because of their extreme chemistry.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-1581852017103-68ac65514cf7?auto=format&fit=crop&w=1920&q=80',
-    name:'Loxodonta africana · African Bush Elephant',loc:'Amboseli, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Order: Proboscidea · Family: Elephantidae · Species: L. africana',
-      description:'The largest land animal on Earth. Elephant society is matriarchal: elder females hold 70 years of memory — drought refuges, migration routes, the identities of hundreds of individuals.',
-      habitat:'Sub-Saharan Africa. Amboseli\'s population is one of the most studied on Earth, with research data spanning over 50 years.',
-      facts:['Elephants grieve. They return to the bones of dead family members, touching them carefully with their trunks for hours.','Their temporal lobe — the memory centre — is larger relative to body size than in any other mammal. They recognise hundreds of individuals by voice alone.','A single elephant creates and maintains water holes used by hundreds of other species. They are keystone ecosystem engineers.','They communicate in infrasound — below human hearing — that travels 10km through the ground.','Between 2010 and 2012 alone, ivory poaching killed over 100,000 African elephants.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1920&q=80',
-    name:'Giraffa reticulata · Reticulated Giraffe',loc:'Laikipia, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Family: Giraffidae · Species: G. reticulata',
-      description:'The most endangered giraffe species. Fewer than 16,000 remain — a 40% population decline in 30 years that conservation biologists call a silent extinction.',
-      habitat:'Northern Kenya, southern Somalia, and southern Ethiopia. Arid and semi-arid bushland of the Horn of Africa.',
-      facts:['Their 45–50cm tongue is blue-black. The pigment is believed to protect against UV radiation from hours of browsing in direct equatorial sun.','A giraffe\'s heart weighs up to 11kg and pumps blood 2 metres upward against gravity.','They sleep only 30 minutes per day total, in 5-minute intervals. In the wild, lying down for longer is rarely safe.','The pattern is unique to each individual — like a fingerprint.','Males engage in "necking" contests — swinging their long necks to head-butt rivals — that can render an opponent unconscious.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1920&q=80',
-    name:'Adansonia digitata · Baobab',loc:'Kilifi Coast, Kenya',
-    info:{
-      classification:'Kingdom: Plantae · Order: Malvales · Family: Malvaceae · Genus: Adansonia · Species: A. digitata',
-      description:'Stores up to 120,000 litres of water in its spongy trunk. Some specimens are over 3,000 years old, making them among the oldest living organisms on Earth.',
-      habitat:'Sub-Saharan African savanna and coastal regions. Kenya\'s Kilifi and Lamu coasts host some of the largest specimens on the continent.',
-      facts:['The Kaya Kinondo sacred forest near Kilifi contains baobabs central to Digo and Giriama ritual life — some considered inhabited by ancestral spirits.','Its fruit contains six times the vitamin C of an orange and twice the calcium of milk. Communities across East Africa have eaten it for millennia.','Hollow baobabs have served as human dwellings, water tanks, and — in South Africa — a pub inside a single trunk with an 8-metre circumference.','It is its own ecosystem: bushbabies, bats, hornbills, genets, and hundreds of insect species depend on it.','Nine of Africa\'s thirteen largest baobabs have partially or completely collapsed since 2005 — likely due to climate-change drought stress.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-1535941339077-2dd1c7963098?auto=format&fit=crop&w=1920&q=80',
-    name:'Connochaetes taurinus · Blue Wildebeest',loc:'Mara River, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Family: Bovidae · Species: C. taurinus',
-      description:'The engine of the Great Migration — the largest overland movement of mammals on the planet. 1.5 million wildebeest travel a 3,000km circuit annually through Tanzania and Kenya.',
-      habitat:'The Serengeti-Mara ecosystem spanning Tanzania and Kenya — one of the most intact savanna systems on Earth.',
-      facts:['400,000–500,000 calves arrive in a 3-week synchronised window to overwhelm the capacity of predators to kill them all. It is called predator saturation.','Newborn calves stand within 7 minutes of birth. Within hours, they run. This is not learned — it is hardwired.','Wildebeest form a mutualistic grazing chain with zebras and gazelles. Each eats a different layer of grass. All three benefit.','The migration follows rainfall gradients — a decentralised emergent intelligence that no individual herd member consciously understands.','The Mara River crossings kill hundreds annually to crocodiles and currents — but the carcasses feed the river ecosystem for months.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1920&q=80',
-    name:'Cenchrus ciliaris · Buffel Grass',loc:'Tsavo East, Kenya',
-    info:{
-      classification:'Kingdom: Plantae · Family: Poaceae · Species: C. ciliaris',
-      description:'In its native East African savanna, a foundation species that sustains vast herbivore populations. Introduced elsewhere, it has become one of the most destructive invasive plants on Earth.',
-      habitat:'Native to semi-arid savannas of East Africa. Invasive in Australia, the American Southwest, and the Canary Islands.',
-      facts:['Seeds bear hook-like bristles that attach to fur and clothing — a dispersal system that crosses continents.','In Tsavo, it is the primary dry-season grazing layer for wildebeest, zebra, and buffalo when all else fails.','Introduced to Australia, it has overrun 400,000 km² of desert, burns hotter than native plants, and destroys fire-sensitive ecosystems.','Its story is a lesson in ecological context: the same species that sustains one ecosystem annihilates another.','Tsavo\'s distinctive red soil — oxidised volcanic ash — is partly stabilised by this grass\'s root networks.']
-    }
-  },
-  
-  /* ── ADDITIONAL SLIDES — Unsplash CDN, no API key needed ── */
-  {
-    img:'https://images.unsplash.com/photo-8fH4JwxbAyw?auto=format&fit=crop&w=1920&q=80',
-    name:'Taurotragus oryx · Common Eland',loc:'Maasai Mara, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Family: Bovidae · Species: T. oryx',
-      description:'The largest African antelope and one of the oldest. Eland silhouettes against a burning Mara sunset — a scene unchanged for thousands of years. Despite their massive size, eland can jump a 2-metre fence from a standing start.',
-      habitat:'Open savanna, bushland, and montane habitats across East and Southern Africa. Particularly associated with the Maasai Mara and Serengeti ecosystems.',
-      facts:['Eland can go without water for extended periods by adjusting their body temperature — allowing it to rise by 7°C before sweating, conserving every drop.','Males emit a distinctive clicking sound as they walk, produced by tendons in their knees. The sound carries long distances and is used for communication.','Eland milk is three to four times richer in fat than cow\'s milk — a nutritional powerhouse that supports rapid calf growth in harsh conditions.','The Maasai have traditionally revered the eland as a sacred animal, featuring centrally in initiation ceremonies and rock art across East Africa.','Despite being the largest antelope, eland are browsers as much as grazers — their dietary flexibility is what allows them to thrive across such varied habitats.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-uIrWBJEvjC4?auto=format&fit=crop&w=1920&q=80',
-    name:'Acinonyx jubatus · Cheetah',loc:'Maasai Mara, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Family: Felidae · Species: A. jubatus',
-      description:'The fastest land animal on Earth — reaching 112 km/h in under three seconds. But speed alone does not sustain a cheetah. Coalition males like this pair survive through cooperation, holding territory that solitary males cannot defend.',
-      habitat:'Open savanna and grassland from East to Southern Africa. The Mara-Serengeti ecosystem sustains one of the densest cheetah populations on Earth.',
-      facts:['A cheetah sprint lasts only 20–30 seconds. After a chase, they must rest for 30 minutes before they can eat — leaving kills vulnerable to lions and hyenas.','Their tear-mark facial stripes reduce glare from the equatorial sun during a hunt — evolved sunglasses.','Unlike other big cats, cheetahs cannot roar. They purr, chirp, and yelp — a suite of sounds closer to a housecat than a lion.','Fewer than 7,000 remain in the wild. Habitat loss and human-wildlife conflict are the primary drivers of their decline.','Cheetah cubs\'s silver mantle mimics the honey badger — one of Africa\'s most feared small predators — possibly deterring predators from attacking the cubs.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-IOJx2UIKBeA?auto=format&fit=crop&w=1920&q=80',
-    name:'Giraffa camelopardalis · Masai Giraffe',loc:'Nairobi National Park, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Family: Giraffidae · Species: G. camelopardalis',
-      description:'A mother, a father, and a calf — a giraffe family in the golden grass of the Kenyan savanna. The Masai giraffe is Kenya\'s largest subspecies, and each spotted coat is as unique as a fingerprint.',
-      habitat:'Savanna and open woodland across Kenya and Tanzania. Nairobi National Park hosts one of the world\'s most accessible giraffe populations, minutes from a capital city.',
-      facts:['A giraffe gives birth standing up. The calf falls nearly two metres to the ground — the shock clears the lungs. Within hours, it can run.','Giraffes form nursery groups: calves are watched over by a single adult female — a rotating babysitting system — while other mothers forage.','Their coat pattern is unique to each individual. Researchers use photographic identification to track individuals across decades.','A giraffe\'s heart weighs up to 11kg and generates double the blood pressure of a human to pump blood up its 2-metre neck.','In 2019, IUCN separated giraffe into four distinct species — a reclassification with major conservation implications. The Masai giraffe is now Vulnerable.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-7tDidSXbgD8?auto=format&fit=crop&w=1920&q=80',
-    name:'Giraffa camelopardalis · Masai Giraffe',loc:'Nairobi National Park — the only national park bordering a capital city',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Family: Giraffidae · Species: G. camelopardalis',
-      description:'A giraffe stands in open grassland with the Nairobi skyline rising behind it. Nairobi National Park — 117 km² of protected wilderness on the edge of a city of five million — is one of conservation\'s most unlikely successes and most precarious experiments.',
-      habitat:'Nairobi National Park borders Kenya\'s capital directly. No fence separates the park\'s southern border — wildlife moves freely between the park and the wider ecosystem.',
-      facts:['Nairobi National Park was established in 1946 — the first national park in Kenya. The city grew around it rather than the park being placed outside the city.','The park sustains lions, leopards, rhinos, buffalo, and over 400 bird species — all within sight of Nairobi\'s CBD.','The Southern Corridor migration route is now partly blocked by real estate development, fragmenting wildlife movement and threatening the park\'s long-term viability.','This image is not a composite. The giraffe and the skyline coexist in the same frame because Nairobi is that city — nature and urban ambition in permanent negotiation.','The park receives over 100,000 visitors annually, generating conservation revenue while serving as Nairobi residents\' closest encounter with wild Kenya.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-92MgFhlWD-8?auto=format&fit=crop&w=1920&q=80',
-    name:'Vachellia drepanolobium · Whistling Thorn Acacia',loc:'Maasai Mara, Kenya',
-    info:{
-      classification:'Kingdom: Plantae · Family: Fabaceae · Species: V. drepanolobium',
-      description:'The Whistling Thorn gets its name from the wind passing through hollow galls at the base of its thorns — created by ant colonies that live symbiotically within. The acacia provides shelter; the ants defend it ferociously against browsing.',
-      habitat:'Black cotton soils of the Maasai Mara and Serengeti — a single ecosystem spanning the Kenya-Tanzania border, one of the most biodiverse grasslands on Earth.',
-      facts:['The hollow galls are home to four species of acacia ants, each occupying a different niche in the same tree. Their interspecies dynamics have been studied for decades.','When giraffes browse heavily, the tree increases tannin production within minutes — and emits volatile chemicals that signal neighbouring trees to do the same.','The Mara\'s iconic flat horizon is largely created by this species — its spreading canopy defines the silhouette that has defined the African savanna in global imagination.','The Mara ecosystem processes over 1.5 million wildebeest, 200,000 zebra, and half a million Thomson\'s gazelle annually through the Great Migration.','Black cotton soil — the Mara\'s substrate — becomes impassable mud in the wet season, structuring where animals can move and where they cannot.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-IjSxa5OKwUs?auto=format&fit=crop&w=1920&q=80',
-    name:'Loxodonta africana · African Bush Elephant',loc:'Amboseli, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Order: Proboscidea · Family: Elephantidae · Species: L. africana',
-      description:'A matriarchal herd moves across the Amboseli plain — elders leading, calves tucked between adults. The elder females carry 70 years of ecological memory: drought refuges, dried-up waterholes, the routes that saved the herd before.',
-      habitat:'Amboseli National Park at the foot of Kilimanjaro — snow-capped Africa\'s highest peak rising behind the driest landscape on the continent. One of the most studied elephant populations on Earth, with data going back over 50 years.',
-      facts:['Amboseli\'s elephants have been individually identified and tracked for over five decades by the Amboseli Elephant Research Project — the world\'s longest-running elephant study.','Kilimanjaro\'s glaciers feed underground springs that emerge as swamps in Amboseli — the reason elephants survive here despite the surrounding desert.','An elephant\'s pregnancy lasts 22 months — the longest of any land animal. Calves are born knowing almost nothing; they spend years learning from their family.','Between 1979 and 1989, ivory poaching halved Africa\'s elephant population — from 1.3 million to 600,000. Amboseli\'s population has partly recovered under protection.','In 2021, Kenya introduced the death penalty for poaching — the first African country to do so. The elephant population has increased 12% since.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-U4KIUpJFmcg?auto=format&fit=crop&w=1920&q=80',
-    name:'Vachellia tortilis · Umbrella Acacia',loc:'Maasai Mara, Kenya',
-    info:{
-      classification:'Kingdom: Plantae · Family: Fabaceae · Species: V. tortilis',
-      description:'The defining tree of the East African savanna. Alone against a burning sky, its flat canopy maximises photosynthesis while minimising heat — 3.8 billion years of evolutionary refinement made visible. This is the tree that shows up in every Kenyan child\'s drawing of home.',
-      habitat:'Semi-arid savanna from Senegal to Somalia and south through East Africa. The umbrella acacia is the most widely distributed tree in sub-Saharan Africa.',
-      facts:['Its deep taproot reaches 35 metres underground — deeper than a 10-storey building is tall — tapping water tables that remain active through the driest decades.','Maasai communities use acacia bark to treat malaria, roots to purify drinking water, and the gum as a food source during drought.','The shape of its crown is aerodynamically optimised: wind flows across it rather than against it, reducing water loss from the trunk.','Giraffes, elephants, impalas, and gerenuk all depend on it — yet it persists because it regenerates faster than any of them can consume it.','The last acacia in a degrading landscape is the last thing standing between grassland and desert. Its loss is the signal that the system has passed a threshold of no return.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-zVa06Y7CxCY?auto=format&fit=crop&w=1920&q=80',
-    name:'Giraffa reticulata · Reticulated Giraffe',loc:'Samburu, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Family: Giraffidae · Species: G. reticulata',
-      description:'Four reticulated giraffes move in loose formation across the Mara plain at golden hour. In 2019, scientists reclassified the four giraffe species — a recognition that what we called "the giraffe" was always four distinct animals facing four distinct fates.',
-      habitat:'Northern Kenya, southern Somalia, and southern Ethiopia. Arid and semi-arid bushland of the Horn of Africa — one of the continent\'s most ecologically stressed regions.',
-      facts:['Fewer than 16,000 reticulated giraffes remain — fewer than the number of elephants in Amboseli alone. It is one of Africa\'s most underpublicised conservation crises.','Their pattern of large chestnut polygons separated by sharp white lines is distinct from all other giraffe subspecies — and unique to each individual.','Giraffe conservation lacks the funding of elephant or rhino conservation, partly because giraffes are not persecuted for a valuable body part. They are simply losing space.','The Save Giraffes Now campaign has fought legal battles to include reticulated giraffes on CITES Appendix II — a tool to regulate international trade in giraffe parts.','Northern Kenya — home of the reticulated giraffe — contains some of the continent\'s most important but least protected wildlife corridors.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-L4-BDd01wmM?auto=format&fit=crop&w=1920&q=80',
-    name:'Panthera leo · African Lion',loc:'Maasai Mara, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Family: Felidae · Species: P. leo',
-      description:'A pride of lions rests in the long grass — a lioness and her cubs, elders and juveniles together. Lion society is one of the most cooperative in the animal kingdom. The pride hunts together, raises cubs communally, defends territory collectively.',
-      habitat:'Open savanna and grassland across sub-Saharan Africa. The Maasai Mara supports one of East Africa\'s densest and most studied lion populations.',
-      facts:['Lion populations have declined by over 43% in the past 20 years. Fewer than 25,000 remain — a dramatic collapse for an animal that once ranged from Greece to India.','Cubs are raised communally — females synchronise births so that multiple mothers nurse each other\'s cubs. It is a form of biological insurance against individual loss.','The Mara\'s lions are individually identified by whisker spot patterns — documented in a database maintained by the Mara Predator Conservation Programme.','Human-wildlife conflict is the primary driver of lion decline. Retaliatory killing following livestock predation accounts for thousands of deaths annually.','A coalition of male lions — brothers or childhood companions — can hold pride tenure for years. Solitary males rarely last a season.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-8Sjcc4vExpg?auto=format&fit=crop&w=1920&q=80',
-    name:'Connochaetes taurinus · The Great Migration',loc:'Maasai Mara, Kenya',
-    info:{
-      classification:'Kingdom: Animalia · Class: Mammalia · Family: Bovidae · Species: C. taurinus + Equus quagga',
-      description:'A hot air balloon drifts over 1.5 million wildebeest and hundreds of thousands of zebra — the largest overland migration of mammals on Earth. Viewed from above, the scale of the migration is almost incomprehensible. The plain is not covered by animals. The animals are the plain.',
-      habitat:'The Serengeti-Mara ecosystem spanning Tanzania and Kenya — 30,000 km² of continuous grassland, one of the last intact large-mammal ecosystems on Earth.',
-      facts:['The migration is not led. No individual knows the route. It emerges from millions of animals each following simple local rules — grass quality, water scent, predator presence — producing continental-scale movement.','Wildebeest calves are born in a three-week synchronised window across the entire population — 400,000–500,000 calves produced faster than predators can kill them. It is called predator saturation.','The Mara River crossings are the most dramatic moment: animals press forward despite crocodiles, strong currents, and the bodies of those who did not make it. They cross because the pressure of the animals behind them leaves no choice.','The ecosystem is maintained by the migration: wildebeest dung fertilises the grassland; their grazing prevents bush encroachment; their deaths feed the river system for months.','This photograph was taken from a balloon registered 5Y-BYM — one of several operating commercial flights over the Mara. The balloon tourism industry employs hundreds of Kenyans and funds conservation directly.']
-    }
-  },
-  {
-    img:'https://images.unsplash.com/photo-CzW7LyMKGbs?auto=format&fit=crop&w=1920&q=80',
-    name:'Erithacus rubecula · European Robin',loc:'Highland forests, East Africa (winter visitor)',
-    info:{
-      classification:'Kingdom: Animalia · Class: Aves · Family: Muscicapidae · Species: E. rubecula',
-      description:'A small, flame-breasted bird perched on a moss-covered stump at dusk — still, alert, perfectly composed. Robins are among the most widely recognised birds in Europe, yet each autumn millions of them simply disappear south. Some reach the highland forests of East Africa, becoming temporary residents in a landscape they navigate entirely by magnetic field and star pattern.',
-      habitat:'Breeds across Europe and western Asia. Winters in North Africa and — in smaller numbers — the highland forests of Ethiopia and Kenya above 1,500 metres elevation.',
-      facts:['Robins navigate migration by sensing the Earth\'s magnetic field through a quantum-mechanical process in their eyes — one of biology\'s most remarkable and poorly understood phenomena.','Their small size belies intense territorial aggression. A robin will attack its own reflection in a mirror, a red feather on the ground, or any intruder for weeks without ceasing.','The species sings year-round — even at night, near artificial light sources — making it one of the few birds whose song is heard in winter.','Male and female robins look identical. Unlike most bird species, females also sing and hold territory — an unusual equality in the avian world.','A robin living to adulthood typically lives 1–2 years in the wild. The record is 19 years — an individual ringed in Britain that survived almost two decades of annual migration.']
-    }
-  }
-];
-
-/* ═══════════════════════════════════════════════════════
-   SLIDESHOW ENGINE — lazy-loading version
-   Only first 3 slides are fetched on load.
-   Each subsequent slide is fetched just before display.
-═══════════════════════════════════════════════════════ */
-let slides = [...STATIC_SLIDES];
-const slidesEl = document.getElementById('slides');
-
-/* Create a single slide element, optionally loading its image now */
-function makeSlideEl(i, loadNow) {
-  const s = slides[i];
-  const el = document.createElement('div');
-  el.className = 'slide' + (i === 0 ? ' active' : '');
-  el.dataset.idx = i;
-  if (loadNow) {
-    el.style.backgroundImage = `url('${s.img}')`;
-  } else {
-    el.dataset.src = s.img; // deferred — loaded just-in-time
-  }
-  return el;
-}
-
-/* Ensure slide N's image is actually loaded in the DOM */
-function ensureLoaded(n) {
-  const target = slidesEl.children[n];
-  if (target && target.dataset.src) {
-    target.style.backgroundImage = `url('${target.dataset.src}')`;
-    delete target.dataset.src;
-  }
-}
-
-function buildSlides() {
-  slidesEl.innerHTML = '';
-  slides.forEach((_, i) => {
-    // Eagerly load first 3; defer the rest
-    slidesEl.appendChild(makeSlideEl(i, i < 3));
+  /* EMAIL OBFUSCATION — bots cannot read this from HTML source */
+  /* Set your real email in the two variables below */
+  /* It will be assembled by JS only, never appear in the raw HTML */
+  const _u = 'muchirimartin'; // user part — CHANGE THIS
+  const _d = 'proton.me';      // domain    — CHANGE THIS
+  document.querySelectorAll('[data-email]').forEach(el => {
+    const addr = _u + '@' + _d;
+    el.href = 'mailto:' + addr;
+    if(el.dataset.showEmail) el.textContent = addr;
   });
-}
-buildSlides();
 
-const MIN_DUR = 10 * 60 * 1000; // 10 min
-const MAX_DUR = 20 * 60 * 1000; // 20 min
-const TICK = 2000;
-let cur = 0, timer = null, elapsed = 0, curDur = rndDur(), paused = false;
+  /* MUSIC PLAYER */
+  function toggleMp(){const p=document.getElementById('mpPanel'),d=document.getElementById('mpDot');p.classList.toggle('open');d.classList.toggle('on',p.classList.contains('open'));}
+  function swMp(el,id){document.querySelectorAll('.mpt').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.mp-pane').forEach(p=>p.classList.remove('active'));el.classList.add('active');document.getElementById('mp-'+id).classList.add('active');}
+  function doSearch(){const q=document.getElementById('spSearch').value.trim();if(q)window.open('https://open.spotify.com/search/'+encodeURIComponent(q),'_blank');}
+  </script>
 
-function rndDur() { return MIN_DUR + Math.random() * (MAX_DUR - MIN_DUR); }
-
-function showSlide(n) {
-  const els = document.querySelectorAll('.slide');
-  if (!els.length) return;
-  els[cur].classList.remove('active');
-  document.getElementById('qWrap').classList.remove('visible');
-  document.getElementById('spWrap').classList.remove('visible');
-  closeDrawer();
-  cur = (n + slides.length) % slides.length;
-  curDur = rndDur(); elapsed = 0;
-  document.getElementById('fill').style.width = '0%';
-  els[cur].classList.add('active');
-  const s = slides[cur];
-  const q = QUOTES[(cur + Math.floor(Date.now() / 3600000)) % QUOTES.length];
-  document.getElementById('qText').textContent = s.isAPOD ? s.title : q.t;
-  document.getElementById('qAttr').textContent = s.isAPOD ? '— NASA APOD · ' + s.date : '— ' + q.a;
-  document.getElementById('apodTag').className = 'apod-tag' + (s.isAPOD ? ' show' : '');
-  document.getElementById('spName').textContent = s.name || '';
-  document.getElementById('spLoc').textContent  = s.loc  || '';
-  const lb = document.getElementById('learnBtn');
-  lb.className = 'learn-btn' + (s.info ? ' show' : '');
-  document.getElementById('counter').textContent =
-    String(cur + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
-  // Ensure this slide's image is loaded (safety net)
-  ensureLoaded(cur);
-  // Preload the NEXT slide so it's ready before we need it
-  ensureLoaded((cur + 1) % slides.length);
-
-  setTimeout(() => {
-    document.getElementById('qWrap').classList.add('visible');
-    document.getElementById('spWrap').classList.add('visible');
-  }, 450);
-}
-
-function tick() {
-  if (paused) return;
-  elapsed += TICK;
-  document.getElementById('fill').style.width = Math.min((elapsed / curDur) * 100, 100) + '%';
-  if (elapsed >= curDur) showSlide(cur + 1);
-}
-
-function startTimer() { clearInterval(timer); timer = setInterval(tick, TICK); }
-
-document.getElementById('next').onclick = () => { showSlide(cur + 1); startTimer(); };
-document.getElementById('prev').onclick = () => { showSlide(cur - 1); startTimer(); };
-document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight') { showSlide(cur + 1); startTimer(); }
-  if (e.key === 'ArrowLeft')  { showSlide(cur - 1); startTimer(); }
-});
-document.querySelector('.bottom').addEventListener('mouseenter', () => { paused = true; });
-document.querySelector('.bottom').addEventListener('mouseleave', () => { paused = false; });
-
-showSlide(0);
-startTimer();
-
-/* ═══════════════════════════════════════════════════════
-   LOAD WILDLIFE IMAGES FROM UNSPLASH API
-   Adds to slides after initial render — non-blocking
-═══════════════════════════════════════════════════════ */
-async function loadWildlife() {
-  if (!UNSPLASH_KEY || UNSPLASH_KEY === 'sgPN2TYKB9CNWvySWEmb7Rx9fnnxSEyUiW_vMPi6baM') return;
-  try {
-    const queries = ['african wildlife', 'africa', 'kenya', 'humanity', 'marine life ocean', 'tropical birds', 'african savanna', 'plantation landscapes', 'rainforest wildlife', 'vintage plane', 'coral reef fish'];
-    const results = await Promise.allSettled(queries.map(q =>
-      fetch(`https://api.unsplash.com/photos/random?query=${encodeURIComponent(q)}&count=8&orientation=landscape&client_id=${UNSPLASH_KEY}`)
-        .then(r => r.ok ? r.json() : [])
-    ));
-    const newSlides = [];
-    results.forEach(r => {
-      if (r.status === 'fulfilled' && Array.isArray(r.value)) {
-        r.value.forEach(p => {
-          newSlides.push({
-            img: p.urls.regular,
-            name: p.alt_description ? p.alt_description.replace(/^\w/, c => c.toUpperCase()) : '',
-            loc: [p.location?.city, p.location?.country].filter(Boolean).join(', '),
-            info: null,
-            credit: p.user.name
-          });
-        });
-      }
-    });
-    if (newSlides.length) {
-      // Shuffle wildlife images in
-      newSlides.sort(() => Math.random() - 0.5);
-      slides = [...STATIC_SLIDES, ...newSlides];
-      buildSlides();
-      // Re-show current slide to keep in sync
-      document.getElementById('counter').textContent =
-        String(cur + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
-    }
-  } catch(e) { /* fail silently */ }
-}
-
-/* ═══════════════════════════════════════════════════════
-   NASA APOD — async, non-blocking
-═══════════════════════════════════════════════════════ */
-async function loadAPOD() {
-  try {
-    const r = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${NASA_KEY}`);
-    if (!r.ok) return;
-    const d = await r.json();
-    if (d.media_type === 'image') {
-      slides.unshift({ img: d.hdurl || d.url, isAPOD: true, title: d.title, date: d.date, name: d.copyright ? '© ' + d.copyright : 'NASA', loc: 'Astronomy Picture of the Day', info: null });
-      buildSlides();
-      document.getElementById('counter').textContent =
-        String(cur + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
-    }
-  } catch(e) { /* fail silently */ }
-}
-
-// Load API data after 3 seconds — page is usable immediately
-setTimeout(() => { loadWildlife(); loadAPOD(); }, 3000);
-
-/* ═══════════════════════════════════════════════════════
-   INFO DRAWER
-═══════════════════════════════════════════════════════ */
-function openDrawer() {
-  const s = slides[cur];
-  if (!s || !s.info) return;
-  document.getElementById('dTitle').textContent = s.name;
-  document.getElementById('dLoc').textContent   = s.loc;
-  document.getElementById('dGrid').innerHTML = `
-    <div class="drawer-block">
-      <h4>Classification</h4>
-      <p class="drawer-class">${s.info.classification.split('·').map(p => '<span>' + p.trim() + '</span>').join('<br>')}</p>
-    </div>
-    <div class="drawer-block">
-      <h4>Description</h4>
-      <p>${s.info.description}</p>
-    </div>
-    <div class="drawer-block">
-      <h4>Habitat &amp; Range</h4>
-      <p>${s.info.habitat}</p>
-    </div>
-    <div class="drawer-block">
-      <h4>Five things worth knowing</h4>
-      <ul class="drawer-facts">${s.info.facts.map(f => '<li>' + f + '</li>').join('')}</ul>
-    </div>`;
-  document.getElementById('drawer').classList.add('open');
-  paused = true;
-}
-
-function closeDrawer() {
-  document.getElementById('drawer').classList.remove('open');
-  paused = false;
-}
-
-/* MUSIC PLAYER */
-function toggleMp() {
-  const p = document.getElementById('mpPanel'), d = document.getElementById('mpDot');
-  p.classList.toggle('open');
-  d.classList.toggle('on', p.classList.contains('open'));
-}
-function swMp(el, id) {
-  document.querySelectorAll('.mpt').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.mp-pane').forEach(p => p.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('mp-' + id).classList.add('active');
-}
-function doSearch() {
-  const q = document.getElementById('spSearch').value.trim();
-  if (q) window.open('https://open.spotify.com/search/' + encodeURIComponent(q), '_blank');
-}
-</script>
 </body>
 </html>
